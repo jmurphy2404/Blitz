@@ -12,6 +12,7 @@ class CreateJobs < ActiveRecord::Migration[5.1]
       t.integer :bike_id
       t.integer :valet_id
       t.integer :status
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

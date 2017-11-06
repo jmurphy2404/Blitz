@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create([
-	{fullname: "John Murphy", address: "240 Fourth Avenue Garwood, NJ", phone_num: "90083377896", user_type: 1, email: "murf2073@gmail.com", password: "password"},
+	{fullname: "John Murphy", address: "240 Fourth Avenue Garwood, NJ", phone_num: "9083377896", user_type: 1, email: "murf2073@gmail.com", password: "password"},
 	{fullname: "Lisa Mae", address: "90 John Street New York, NY", phone_num: "9081234567", user_type: 1, email: "lisamae@gmail.com", password: "password"},
 	{fullname: "Cam Crews", address: "95 Broadway New York, NY", phone_num: "2125556666", user_type: 2, email: "cam@gmail.com", password: "password"}
 ])
@@ -19,5 +19,5 @@ Bike.create([
 ])
 
 Job.create([
-	{origin: "Central Park New York, NY", destination: "5 Times Square New York, NY", origin_lat: 40.785091, origin_lng: -73.968285, dest_lat: 40.7557, dest_lng: -73.9874, date: "11/27/17", time: "13:05", bike_id: 2}
+	{origin: "Central Park New York, NY", destination: "5 Times Square New York, NY", origin_lat: 40.785091, origin_lng: -73.968285, dest_lat: 40.7557, dest_lng: -73.9874, date: "11/27/17", time: "13:05", bike_id: 2, user_id: 2}
 ])

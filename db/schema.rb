@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(version: 20171106204443) do
     t.integer "bike_id"
     t.integer "valet_id"
     t.integer "status"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

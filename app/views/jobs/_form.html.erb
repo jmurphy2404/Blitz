@@ -1,0 +1,72 @@
+<%= form_with(model: job, local: true) do |form| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :origin_lat %>
+    <%= form.text_field :origin_lat, id: :job_origin_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :origin_lng %>
+    <%= form.text_field :origin_lng, id: :job_origin_lng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dest_lat %>
+    <%= form.text_field :dest_lat, id: :job_dest_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dest_lng %>
+    <%= form.text_field :dest_lng, id: :job_dest_lng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :origin %>
+    <%= form.text_field :origin, id: :job_origin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destination %>
+    <%= form.text_field :destination, id: :job_destination %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date, id: :job_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.datetime_select :time, id: :job_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bike_id %>
+    <%= form.number_field :bike_id, id: :job_bike_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valet_id %>
+    <%= form.number_field :valet_id, id: :job_valet_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :job_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

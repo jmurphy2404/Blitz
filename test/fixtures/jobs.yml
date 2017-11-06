@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  origin_lat: 1.5
+  origin_lng: 1.5
+  dest_lat: 1.5
+  dest_lng: 1.5
+  origin: MyString
+  destination: MyString
+  date: 2017-11-06 14:47:22
+  time: 2017-11-06 14:47:22
+  bike_id: 1
+  valet_id: 1
+  status: 1
+
+two:
+  origin_lat: 1.5
+  origin_lng: 1.5
+  dest_lat: 1.5
+  dest_lng: 1.5
+  origin: MyString
+  destination: MyString
+  date: 2017-11-06 14:47:22
+  time: 2017-11-06 14:47:22
+  bike_id: 1
+  valet_id: 1
+  status: 1

@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origin lat:</strong>
+  <%= @job.origin_lat %>
+</p>
+
+<p>
+  <strong>Origin lng:</strong>
+  <%= @job.origin_lng %>
+</p>
+
+<p>
+  <strong>Dest lat:</strong>
+  <%= @job.dest_lat %>
+</p>
+
+<p>
+  <strong>Dest lng:</strong>
+  <%= @job.dest_lng %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @job.origin %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @job.destination %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @job.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @job.time %>
+</p>
+
+<p>
+  <strong>Bike:</strong>
+  <%= @job.bike_id %>
+</p>
+
+<p>
+  <strong>Valet:</strong>
+  <%= @job.valet_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @job.status %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

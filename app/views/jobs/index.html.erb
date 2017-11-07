@@ -1,6 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Jobs</h1>
+<header class="masthead">
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h1 class="brand-heading">Jobs</h1>
+
+          <a href="#about" class="btn btn-circle js-scroll-trigger">
+            <i class="fa fa-angle-double-down animated"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 
 <% if user_signed_in? %>
 <% if current_user.user_type == 1 %>

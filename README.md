@@ -11,6 +11,8 @@ bundle install
 rails g devise:install
 rails g devise User
 rails g devise:views
+rails g uploader Image
+
 ```
 
 ## Routes

@@ -1,0 +1,12 @@
+
+<ul>
+	  <li><a class="active" href="/">HOME</a></li>
+	  <li><a href="/about">how it works</a></li>
+	  <li><a href="/valet">pricing</a></li>
+	  <li><a href="/my bikes">membership perks</a></li>
+	  <li><a href="/where to">where to</a></li>
+	  <% if
+	  !@current_user %>
+	  	<li><a href="/logout">LOGOUT</a></li>
+	  <% end %>
+</ul>

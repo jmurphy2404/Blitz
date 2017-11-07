@@ -58,3 +58,13 @@ cancel_user_registration GET    /users/cancel(.:format)        devise/registrati
                          PUT    /users/:id(.:format)           users#update
                          DELETE /users/:id(.:format)           users#destroy
 ```
+## API Key
+```
+Google Maps Javascript API key = AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc
+
+#Javascript Maps API
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc&callback=initMap" type="text/javascript"></script>
+
+#Places Library
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc&libraries=places"></script>
+```

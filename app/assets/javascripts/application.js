@@ -13,9 +13,9 @@
 
 //= require rails-ujs
 //= require jquery
+// require turbolinks
+// require_tree .
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
 //= require bootstrap
 //= require twitter/bootstrap
 //= require jquery.easing

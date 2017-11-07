@@ -55,3 +55,9 @@ gem 'carrierwave', '~> 1.0'
 
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+
+gem 'therubyracer'
+gem 'less-rails-bootstrap'
+
+ gem "font-awesome-rails"
+  gem 'jquery-easing-rails'

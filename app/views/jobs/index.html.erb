@@ -1,3 +1,19 @@
+<header class="masthead">
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h1 class="brand-heading">Jobs</h1>
+
+          <a href="#about" class="btn btn-circle js-scroll-trigger">
+            <i class="fa fa-angle-double-down animated"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Jobs</h1>
@@ -20,7 +36,7 @@
     </tr>
   </thead>
 
-  <tbody>
+ <tbody>
       <% @jobs.each do |job| %>
       <tr>
         <td><%= job.bike.bike_full %></td>
@@ -33,24 +49,28 @@
         <td><%= job.time.strftime("%B %d, %Y") %></td>
         <td><%= job.time.strftime("%I:%M:%S %p") %></td>
 
+
         
-        <% case current_user.user_type %>     
+
+
+       
+       <% case current_user.user_type %>
         <% when 'client' %>
         <td><%= job.valet_id %></td>
         <td><%= job.status %></td>
         <td><%= job.user.fullname %></td>
 
-        <% when 'valet' %>
+       <% when 'valet' %>
         <td><%= job.valet_id %></td>
         <td><%= job.status %></td>
         <td><%= job.user.fullname %></td>
 
-        <% when 'admin' %>
+       <% when 'admin' %>
         <td><%= job.valet_id %></td>
         <td><%= job.status %></td>
         <td><%= job.user.fullname %></td>
 
-        <% end %>
+       <% end %>
         
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
@@ -61,4 +81,14 @@
 </table>
 
 <br>
+<%= javascript_include_tag "map" %>
+<% case current_user.user_type %>
+<% when 'valet' %>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
+<div id="map"></div>
+<% end %>
+
+<br>
+
+
 <%= link_to "Create a new request", new_job_path %>

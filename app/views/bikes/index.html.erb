@@ -1,6 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bikes</h1>
+<header class="masthead">
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h1 class="brand-heading">Bikes</h1>
+
+          <a href="#about" class="btn btn-circle js-scroll-trigger">
+            <i class="fa fa-angle-double-down animated"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 
 <table>
   <thead>
@@ -17,14 +32,19 @@
   <tbody>
     <% @bikes.each do |bike| %>
       <tr>
+
         <td><%= link_to bike.make, bike, data: {behavior: "bike-link", bike_id: bike.id} %></td>
         <td><%= link_to bike.model, bike, data: {behavior: "bike-link", bike_id: bike.id} %></td>
         <td><%= link_to bike.color, bike, data: {behavior: "bike-link", bike_id: bike.id} %></td>
-        <td><%= bike.image %></td>
+
+
+        <td><%= image_tag (bike.image.url) if bike.image? %></td>
+        <td><%= bike.user.fullname %></td>
+
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= bike.user.fullname %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -32,5 +52,5 @@
 
 <br>
 
-<%= link_to 'Add a new bike', new_bike_path %> | 
+<%= link_to 'Add a new bike', new_bike_path %> |
 <%= link_to "Create a new request", new_job_path %>

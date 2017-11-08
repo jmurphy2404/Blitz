@@ -5,9 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'bootstrap-sass'
-gem 'jquery-rails'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
@@ -54,3 +51,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 gem 'carrierwave', '~> 1.0'
+
+gem 'jquery-rails'
+gem 'bootstrap-sass'
+
+gem 'therubyracer'
+gem 'less-rails-bootstrap'
+
+ gem "font-awesome-rails"
+  gem 'jquery-easing-rails'

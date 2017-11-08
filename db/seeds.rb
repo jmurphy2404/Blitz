@@ -19,5 +19,5 @@ Bike.create([
 ])
 
 Job.create([
-	{origin: "Central Park New York, NY", destination: "5 Times Square New York, NY", origin_lat: 40.785091, origin_lng: -73.968285, dest_lat: 40.7557, dest_lng: -73.9874, date: "11/27/17", time: "13:05", bike_id: 2, user_id: 2}
+	{origin: "Central Park New York, NY", destination: "5 Times Square New York, NY", origin_lat: 40.785091, origin_lng: -73.968285, dest_lat: 40.7557, dest_lng: -73.9874, date: "11/27/17", time: "13:05", bike_id: 2, user_id: 2, status: 0}
 ])

@@ -39,6 +39,7 @@
    </tr>
  </thead>
 
+
  <tbody>
      <% @jobs.each do |job| %>
      <tr>
@@ -63,6 +64,13 @@
  </tbody>
 </table>
 
+<br></br>
+<%= javascript_include_tag "map" %>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
+<div id="map"></div>
 <% end %>
-<br>
+
+<% end %>
+<br></br>
+
 <%= link_to "Create a new request", new_job_path %>

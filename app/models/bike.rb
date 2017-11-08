@@ -7,4 +7,5 @@ class Bike < ApplicationRecord
   	"#{make} - #{model} - #{color}"
   end
 
+
 end

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :bikes
   resources :users
 
+  devise_scope :user do 
+  	get 'valet/sign_up' => 'registrations#valet_new'
+  end
+  
 
 
 

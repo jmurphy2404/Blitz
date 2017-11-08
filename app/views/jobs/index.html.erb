@@ -49,8 +49,12 @@
         <td><%= job.time.strftime("%B %d, %Y") %></td>
         <td><%= job.time.strftime("%I:%M:%S %p") %></td>
 
+
+        
+
+
        
-       <% case current_user.user_type %>    
+       <% case current_user.user_type %>
         <% when 'client' %>
         <td><%= job.valet_id %></td>
         <td><%= job.status %></td>

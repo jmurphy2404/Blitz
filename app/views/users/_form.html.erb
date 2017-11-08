@@ -26,12 +26,15 @@
     <%= form.number_field :phone_num, id: :user_phone_num %>
   </div>
 
+  
   <div class="field">
     <%= form.label :user_type %>
-    <%= form.number_field :user_type, id: :user_user_type %>
+    <%= form.select :user_type, options_for_select([["Client", "client"], ["Valet", "valet"]]) %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <p><%= link_to "Skip for now", jobs_path %>  or <%= link_to "add a bike", new_bike_path %></p>
 <% end %>

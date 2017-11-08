@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
 	has_many :bikes
 	has_many :jobs, foreign_key: :valet_id
+	enum user_type: [:client, :valet]
+
 end

@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :fullname
       t.string :address
       t.string :phone_num
-      t.integer :user_type
+      t.integer :user_type, default: 0
 
       t.timestamps
     end

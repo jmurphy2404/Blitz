@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create([
-	{fullname: "John Murphy", address: "240 Fourth Avenue Garwood, NJ", phone_num: "9083377896", user_type: 1, email: "murf2073@gmail.com", password: "password"},
-	{fullname: "Lisa Mae", address: "90 John Street New York, NY", phone_num: "9081234567", user_type: 1, email: "lisamae@gmail.com", password: "password"},
-	{fullname: "Cam Crews", address: "95 Broadway New York, NY", phone_num: "2125556666", user_type: 2, email: "cam@gmail.com", password: "password"}
+	{fullname: "John Murphy", address: "240 Fourth Avenue Garwood, NJ", phone_num: "9083377896", user_type: "client", email: "murf2073@gmail.com", password: "password"},
+	{fullname: "Lisa Mae", address: "90 John Street New York, NY", phone_num: "9081234567", user_type: "client", email: "lisamae@gmail.com", password: "password"},
+	{fullname: "Cam Crews", address: "95 Broadway New York, NY", phone_num: "2125556666", user_type: "valet", email: "cam@gmail.com", password: "password"}
 ])
 
 Bike.create([

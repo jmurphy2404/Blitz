@@ -32,9 +32,26 @@
         <td><%= job.destination %></td>
         <td><%= job.time.strftime("%B %d, %Y") %></td>
         <td><%= job.time.strftime("%I:%M:%S %p") %></td>
+
+        
+        <% case current_user.user_type %>     
+        <% when 'client' %>
         <td><%= job.valet_id %></td>
         <td><%= job.status %></td>
         <td><%= job.user.fullname %></td>
+
+        <% when 'valet' %>
+        <td><%= job.valet_id %></td>
+        <td><%= job.status %></td>
+        <td><%= job.user.fullname %></td>
+
+        <% when 'admin' %>
+        <td><%= job.valet_id %></td>
+        <td><%= job.status %></td>
+        <td><%= job.user.fullname %></td>
+
+        <% end %>
+        
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20171106204443) do
     t.string "fullname"
     t.string "address"
     t.string "phone_num"
-    t.integer "user_type"
+    t.integer "user_type", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

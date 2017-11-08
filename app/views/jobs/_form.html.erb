@@ -43,28 +43,20 @@
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.datetime_select :date, id: :job_date %>
+    <%= form.date_field :date, id: :job_date %>
   </div>
 
   <div class="field">
     <%= form.label :time %>
-    <%= form.datetime_select :time, id: :job_time %>
+    <%= form.time_field :time, id: :job_time %>
   </div>
 
   <div class="field">
     <%= form.label :bike_id %>
-    <%= form.number_field :bike_id, id: :job_bike_id %>
+    <%= collection_select(:job, :bike_id, current_user.bikes, :id, :bike_full, { :prompt => 'Select a bike'} ) %>
   </div>
 
-  <div class="field">
-    <%= form.label :valet_id %>
-    <%= form.number_field :valet_id, id: :job_valet_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status, id: :job_status %>
-  </div>
+  
 
   <div class="actions">
     <%= form.submit %>

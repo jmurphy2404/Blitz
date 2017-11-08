@@ -36,15 +36,15 @@
         <td><%= link_to bike.make, bike, data: {behavior: "bike-link", bike_id: bike.id} %></td>
         <td><%= link_to bike.model, bike, data: {behavior: "bike-link", bike_id: bike.id} %></td>
         <td><%= link_to bike.color, bike, data: {behavior: "bike-link", bike_id: bike.id} %></td>
-       
 
-        <td><%= image_tag (bike.image) %></td>
+
+        <td><%= image_tag (bike.image.url) if bike.image? %></td>
         <td><%= bike.user.fullname %></td>
 
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-     
+
       </tr>
     <% end %>
   </tbody>
@@ -52,5 +52,5 @@
 
 <br>
 
-<%= link_to 'Add a new bike', new_bike_path %> | 
+<%= link_to 'Add a new bike', new_bike_path %> |
 <%= link_to "Create a new request", new_job_path %>

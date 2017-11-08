@@ -40,28 +40,32 @@
    </tr>
  </thead>
 
- <tbody>
-     <% @jobs.each do |job| %>
-     <tr>
-       <td><%= job.bike.bike_full %></td>
-       <td><%= job.origin_lat %></td>
-       <td><%= job.origin_lng %></td>
-       <td><%= job.dest_lat %></td>
-       <td><%= job.dest_lng %></td>
-       <td><%= job.origin %></td>
-       <td><%= job.destination %></td>
-       <td><%= job.time.strftime("%B %d, %Y") %></td>
-       <td><%= job.time.strftime("%I:%M:%S %p") %></td>
-       <td><%= job.valet_id %></td>
-       <td><%= job.status %></td>
-       <td><%= job.user.fullname %></td>
-       <td><%= link_to 'Show', job %></td>
-       <td><%= link_to 'Edit', edit_job_path(job) %></td>
-       <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-     </tr>
-   <% end %>
- </tbody>
-</table>
-
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.origin %></td>
+        <td><%= job.origin_lat %></td>
+        <td><%= job.origin_lng %></td>
+        <td><%= job.destination %></td>
+        <td><%= job.dest_lat %></td>
+        <td><%= job.dest_lng %></td>
+        <td><%= job.date %></td>
+        <td><%= job.time %></td>
+        <td><%= job.bike_id %></td>
+        <td><%= job.valet_id %></td>
+        <td><%= job.status %></td>
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table><br>
+<%= javascript_include_tag "map" %>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
+<div id="map"></div>
+<% end %>
+<% end %>
 <br>
+
 <%= link_to "Create a new request", new_job_path %>

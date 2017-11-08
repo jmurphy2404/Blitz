@@ -20,10 +20,8 @@
   <%= @bike.image %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @bike.user.fullname %>
-</p>
+
+<%= link_to "Create a request", new_job_path(bike_id: @bike.id) %> |
 
 <%= link_to 'Edit', edit_bike_path(@bike) %> |
 <%= link_to 'Back', bikes_path %>

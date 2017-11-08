@@ -28,10 +28,12 @@
 
   <div class="field">
     <%= form.label :user_type %>
-    <%= form.number_field :user_type, id: :user_user_type %>
+    <%= form.select :user_type, options_for_select([["Client", "client"], ["Valet", "valet"]]) %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <p>Skip for now and <%= link_to "add a bike", new_bike_path %></p>
 <% end %>

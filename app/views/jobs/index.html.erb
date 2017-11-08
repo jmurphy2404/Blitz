@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <header class="masthead">
   <div class="intro-body">
     <div class="container">
@@ -16,61 +14,78 @@
   </div>
 </header>
 
+<p id="notice"><%= notice %></p>
 
-<% if user_signed_in? && current_user.user_type == 1 %>
+<<<<<<< HEAD
+<h1>Jobs</h1>
 <table>
   <thead>
     <tr>
-
-
-     <th>Bike</th>
-     <th>Origin lat</th>
-     <th>Origin lng</th>
-     <th>Dest lat</th>
-     <th>Dest lng</th>
-     <th>Origin</th>
-     <th>Destination</th>
-     <th>Date</th>
-     <th>Time</th>
-     <th>Valet Assigned</th>
-     <th>Current Status</th>
-     <th>Client Name</th>
-     <th colspan="3"></th>
-   </tr>
- </thead>
-
+      <th>Bike</th>
+      <th>Origin lat</th>
+      <th>Origin lng</th>
+      <th>Dest lat</th>
+      <th>Dest lng</th>
+      <th>Origin</th>
+      <th>Destination</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Valet Assigned</th>
+      <th>Current Status</th>
+      <th>Client Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
  <tbody>
-     <% @jobs.each do |job| %>
-     <tr>
-       <td><%= job.bike.bike_full %></td>
-       <td><%= job.origin_lat %></td>
-       <td><%= job.origin_lng %></td>
-       <td><%= job.dest_lat %></td>
-       <td><%= job.dest_lng %></td>
-       <td><%= job.origin %></td>
-       <td><%= job.destination %></td>
-       <td><%= job.time.strftime("%B %d, %Y") %></td>
-       <td><%= job.time.strftime("%I:%M:%S %p") %></td>
-       <td><%= job.valet_id %></td>
-       <td><%= job.status %></td>
-       <td><%= job.user.fullname %></td>
-       <td><%= link_to 'Show', job %></td>
-       <td><%= link_to 'Edit', edit_job_path(job) %></td>
-       <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-     </tr>
-   <% end %>
+      <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.bike.bike_full %></td>
+        <td><%= job.origin_lat %></td>
+        <td><%= job.origin_lng %></td>
+        <td><%= job.dest_lat %></td>
+        <td><%= job.dest_lng %></td>
+        <td><%= job.origin %></td>
+        <td><%= job.destination %></td>
+        <td><%= job.time.strftime("%B %d, %Y") %></td>
+        <td><%= job.time.strftime("%I:%M:%S %p") %></td>
 
- </tbody>
+       
+       <% case current_user.user_type %>    
+        <% when 'client' %>
+        <td><%= job.valet_id %></td>
+        <td><%= job.status %></td>
+        <td><%= job.user.fullname %></td>
+
+       <% when 'valet' %>
+        <td><%= job.valet_id %></td>
+        <td><%= job.status %></td>
+        <td><%= job.user.fullname %></td>
+
+       <% when 'admin' %>
+        <td><%= job.valet_id %></td>
+        <td><%= job.status %></td>
+        <td><%= job.user.fullname %></td>
+
+       <% end %>
+        
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br></br>
+<br>
 <%= javascript_include_tag "map" %>
+<% case current_user.user_type %>
+<% when 'valet' %>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
 <div id="map"></div>
 <% end %>
 
-<% end %>
-<br></br>
+<br>
+
 
 <%= link_to "Create a new request", new_job_path %>

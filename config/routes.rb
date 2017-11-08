@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :jobs
   resources :bikes
   resources :users
+
   get 'logout' => "home#logout"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

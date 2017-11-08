@@ -1,10 +1,14 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    @jobs = Job.where(user_id: current_user.id)
+    @client = User.where user_type: :client
+    @valet = User.where user_type: :valet
+
   end
 
   # GET /jobs/1
@@ -22,20 +26,29 @@ class JobsController < ApplicationController
   end
 
   # POST /jobs
-  # POST /jobs.json
   def create
     @job = Job.new(job_params)
-
-    respond_to do |format|
+    @job.user = current_user
       if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
-        format.json { render :show, status: :created, location: @job }
+        redirect_to jobs_path, notice: 'Job was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
+
+  # POST /jobs.json
+#  def create
+#    @job = Job.new(job_params)
+#    respond_to do |format|
+#      if @job.save
+#        format.html { redirect_to @job, notice: 'Job was successfully created.' }
+#        format.json { render :show, status: :created, location: @job }
+#      else
+#        format.html { render :new }
+#        format.json { render json: @job.errors, status: :unprocessable_entity }
+#      end
+#    end
+#  end
 
   # PATCH/PUT /jobs/1
   # PATCH/PUT /jobs/1.json

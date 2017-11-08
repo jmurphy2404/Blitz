@@ -1,5 +1,22 @@
+<header class="masthead">
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h1 class="brand-heading">Jobs</h1>
+
+          <a href="#about" class="btn btn-circle js-scroll-trigger">
+            <i class="fa fa-angle-double-down animated"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 <p id="notice"><%= notice %></p>
 
+<<<<<<< HEAD
 <h1>Jobs</h1>
 <table>
   <thead>
@@ -59,14 +76,16 @@
     <% end %>
   </tbody>
 </table>
-<br>
 
+<br>
 <%= javascript_include_tag "map" %>
 <% case current_user.user_type %>
 <% when 'valet' %>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
 <div id="map"></div>
 <% end %>
+
 <br>
 
-<%= link_to 'New Job', new_job_path %>
+
+<%= link_to "Create a new request", new_job_path %>

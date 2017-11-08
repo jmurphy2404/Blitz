@@ -1,10 +1,11 @@
 class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /bikes
   # GET /bikes.json
   def index
-    @bikes = Bike.all
+    @bikes = Bike.where(user_id: current_user.id)
   end
 
   # GET /bikes/1
@@ -22,20 +23,29 @@ class BikesController < ApplicationController
   end
 
   # POST /bikes
-  # POST /bikes.json
   def create
     @bike = Bike.new(bike_params)
-
-    respond_to do |format|
+    @bike.user = current_user
       if @bike.save
-        format.html { redirect_to @bike, notice: 'Bike was successfully created.' }
-        format.json { render :show, status: :created, location: @bike }
+        redirect_to bikes_path, notice: 'Bike was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @bike.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
+  # POST /bikes.json
+#  def create
+#    @bike = Bike.new(bike_params)
+#
+#    respond_to do |format|
+#      if @bike.save
+#        format.html { redirect_to @bike, notice: 'Bike was successfully created.' }
+#        format.json { render :show, status: :created, location: @bike }
+#      else
+#        format.html { render :new }
+#        format.json { render json: @bike.errors, status: :unprocessable_entity }
+#      end
+#    end
+#  end
 
   # PATCH/PUT /bikes/1
   # PATCH/PUT /bikes/1.json

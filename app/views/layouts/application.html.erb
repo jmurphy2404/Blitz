@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Agencyweek</title>
+    <title>Blitz</title>
     <%= csrf_meta_tags %>
 
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+  <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <body>
-   
-  	<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to root_path, class: "navbar-brand" do %>
-            LogisticAlly
-          <% end %>
-          <br>
-          <%= link_to "Jobs", jobs_path %> |
-          <%= link_to "Bikes", bikes_path %> |
-          <%= link_to "Users", users_path %>
-        </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-          </ul>
 
-          <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-              <%= yield :right_nav %>
 
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Settings", edit_user_registration_path %></li>
-                  <li role="separator" class="divider"></li>
-                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                </ul>
-              </li>
-            <% else %>
-              <li><%= link_to "Sign Up", new_user_registration_path %></li>
-              <li><%= link_to "Login", new_user_session_path %></li>
-              <li><%= link_to "Become a bike valet", new_user_registration_path %>
-            <% end %>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+    <body id="page-top">
 
-     <%= yield %>
+    <%= render partial: "home/navbar" %>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc&callback=initMap" type="text/javascript"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/grayscale.min.js"></script>
+
+
+
+  <%= yield %>
+
+
+
   </body>
 </html>

@@ -5,7 +5,12 @@ class BikesController < ApplicationController
   # GET /bikes
   # GET /bikes.json
   def index
-    @bikes = Bike.where(user_id: current_user.id)
+    if current_user.client?
+      @bikes = Bike.where(user_id: current_user.id)
+    else
+      redirect_to request.referrer, notice: 'You do not have access to this feature. Please sign up as a client.'
+    end
+
   end
 
   # GET /bikes/1
@@ -15,7 +20,12 @@ class BikesController < ApplicationController
 
   # GET /bikes/new
   def new
-    @bike = Bike.new
+    if current_user.client?
+      @bike = Bike.new
+    else
+      redirect_to request.referrer, notice: 'You do not have access to this feature. Please sign up as a client.'
+    end
+
   end
 
   # GET /bikes/1/edit
@@ -50,6 +60,7 @@ class BikesController < ApplicationController
   # PATCH/PUT /bikes/1
   # PATCH/PUT /bikes/1.json
   def update
+    if current_user.client?
     respond_to do |format|
       if @bike.update(bike_params)
         format.html { redirect_to @bike, notice: 'Bike was successfully updated.' }
@@ -59,6 +70,10 @@ class BikesController < ApplicationController
         format.json { render json: @bike.errors, status: :unprocessable_entity }
       end
     end
+    else
+      redirect_to request.referrer, notice: 'You do not have access to this feature. Please sign up as a client.'
+    end
+    
   end
 
   # DELETE /bikes/1

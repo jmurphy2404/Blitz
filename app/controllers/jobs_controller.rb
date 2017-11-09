@@ -5,20 +5,30 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.where(user_id: current_user.id)
-    @client = User.where user_type: :client
-    @valet = User.where user_type: :valet
-
+    @valets = User.where(user_type: :valet)
+    if current_user.client?
+      @jobs = Job.where(user_id: current_user.id)
+    else
+      @jobs = Job.all
+    end
   end
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    
+      @jobs = Job.all
+    else
+
   end
 
   # GET /jobs/new
   def new
-    @job = Job.new
+    if current_user.client?
+      @job = Job.new
+    else
+      redirect_to request.referrer, notice: 'You do not have access to this feature. Please sign up as a client.'
+    end
   end
 
   # GET /jobs/1/edit
@@ -27,12 +37,12 @@ class JobsController < ApplicationController
 
   # POST /jobs
   def create
-    @job = Job.new(job_params)
-    @job.user = current_user
-      if @job.save
-        redirect_to jobs_path, notice: 'Job was successfully created.'
-      else
-        render :new
+      @job = Job.new(job_params)
+      @job.user = current_user
+        if @job.save
+          redirect_to jobs_path, notice: 'Job was successfully created.'
+        else
+          render :new
       end
   end
 
@@ -64,14 +74,29 @@ class JobsController < ApplicationController
     end
   end
 
+  def assign_valet
+    @job = Job.find(params[:job_id])
+    @valet = User.find params[:valet_id]
+    @job.valet = @valet
+    # @job.valet_id = @valet.id
+    
+
+  end
+
+
   # DELETE /jobs/1
   # DELETE /jobs/1.json
   def destroy
+    if current_user.client?
     @job.destroy
     respond_to do |format|
       format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
       format.json { head :no_content }
     end
+     else
+      redirect_to request.referrer, notice: 'You do not have access to this feature. Please sign up as a client.'
+    end
+    
   end
 
   private

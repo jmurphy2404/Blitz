@@ -74,13 +74,18 @@ class JobsController < ApplicationController
     end
   end
 
-  def assign_valet
-    @job = Job.find(params[:job_id])
-    @valet = User.find params[:valet_id]
-    @job.valet = @valet
-    # @job.valet_id = @valet.id
+#  def assign_valet
+#    @job = Job.find(params[:job_id])
+#    @valet = User.find params[:valet_id]
+#    @job.valet = @valet
+#    # @job.valet_id = @valet.id
+#
+#  end
 
+  def update_status
+    @job = Job.find(params[:job_id])
   end
+
 
 
   # DELETE /jobs/1

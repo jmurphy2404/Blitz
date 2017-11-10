@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   	get 'valet/sign_up' => 'registrations#valet_new'
   end
 
-  put 'job/assign' => 'jobs#assign_valet', as: :assign_valet
+  #put 'job/assign' => 'jobs#assign_valet', as: :assign_valet
   
+  put 'job/update_status' => 'jobs#update_status', as: :update_status
 
 
 

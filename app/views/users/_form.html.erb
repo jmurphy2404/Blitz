@@ -12,29 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :fullname %>
+    <%= form.label :fullname %></br>
     <%= form.text_field :fullname, id: :user_fullname %>
   </div>
 
   <div class="field">
-    <%= form.label :address %>
+    <%= form.label :address %></br>
     <%= form.text_field :address, id: :user_address %>
   </div>
 
   <div class="field">
-    <%= form.label :phone_num %>
+    <%= form.label :phone_number %></br>
     <%= form.number_field :phone_num, id: :user_phone_num %>
   </div>
 
   
-  <div class="field">
+  <!--<div class="field">
     <%= form.label :user_type %>
     <%= form.select :user_type, options_for_select([["Client", "client"], ["Valet", "valet"]]) %>
   </div>
+-->
 
   <div class="actions">
     <%= form.submit %>
   </div>
 
+  <% case current_user.user_type %>
+       <% when 'client' %>
   <p><%= link_to "Skip for now", jobs_path %>  or <%= link_to "add a bike", new_bike_path %></p>
+  <% end %>
+</br>
+  <p><%= link_to "Click here", edit_user_registration_path %> to change your log in settings or delete your account</p>
+    
 <% end %>

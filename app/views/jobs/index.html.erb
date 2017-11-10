@@ -15,50 +15,36 @@
 </header>
 -->
 
-<h1>Jobs</h1>
+<% case current_user.user_type %>
+       <% when 'valet' %>
+<h1>My Assignments</h1>
 <table>
   <thead>
     <tr>
-      <th>Bike</th>
-      <th>Origin lat</th>
-      <th>Origin lng</th>
-      <th>Dest lat</th>
-      <th>Dest lng</th>
+      <th>Bike</th> 
       <th>Origin</th>
       <th>Destination</th>
       <th>Date</th>
       <th>Time</th>
       <th>Valet Assigned</th>
       <th>Current Status</th>
-      <th>Client Email</th>
+      <th>Client Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
  <tbody>
-      <% @jobs.each do |job| %>
-      <tr id="job_row_<%= job.id %>">
+      <% if current_user %>
+      <% current_user.jobs.each do |job| %>
+      <tr>
         <td><%= job.bike.bike_full %></td>
-        <td><%= job.origin_lat %></td>
-        <td><%= job.origin_lng %></td>
-        <td><%= job.dest_lat %></td>
-        <td><%= job.dest_lng %></td>
         <td><%= job.origin %></td>
         <td><%= job.destination %></td>
         <td><%= job.time.strftime("%B %d, %Y") %></td>
         <td><%= job.time.strftime("%I:%M:%S %p") %></td>
-        <td class="valet"><%= job.valet_id %></td>
+        <td><%= job.valet_id %></td>
         <td><%= job.status %></td>
-        <td><%= job.user.email %></td>
-       
-      <% case current_user.user_type %>
-       <% when 'valet' %>
-        <%= form_tag assign_valet_path, method: :put, remote: true do %>
-        <%= hidden_field_tag :job_id, job.id %>
-        <td><%= collection_select(nil, :valet_id, @valets, :id, :fullname, {prompt: true}, {onchange: "Rails.fire(document.querySelector('#job_row_#{job.id} form'), 'submit');"} ) %></td>
-        <% end %>
-      <% end %>
-        
+        <td><%= job.user.fullname %></td>
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -66,6 +52,73 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
+<% end %>
+
+
+<% case current_user.user_type %>
+          <% when 'valet' %>
+<h1>All Assignments</h1>
+<% end %>
+
+<% case current_user.user_type %>
+          <% when 'client' %>
+<h1>My Trips</h1>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bike</th>
+      <th>Origin</th>
+      <th>Destination</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Valet Assigned</th>
+      <th>Current Status</th>
+      <th>Client Name</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+ <tbody>
+      <% @jobs.each do |job| %>
+      <tr>       
+        <td><%= job.bike.bike_full %></td>
+        <td><%= job.origin %></td>
+        <td><%= job.destination %></td>
+        <td><%= job.time.strftime("%B %d, %Y") %></td>
+        <td><%= job.time.strftime("%I:%M:%S %p") %></td>
+        <% case current_user.user_type %>
+          <% when 'valet' %>
+            <% if job.valet_id != nil %>
+              <td>Already assigned</td>
+            <% else %>
+              <%= form_with(model: job, local: true) do |form| %>
+              <%= form.hidden_field :valet_id, id: :job_valet_id, :value => current_user.id %>
+              <td><%= submit_tag 'Work' %></td>
+              <% end %>
+            <% end %>
+        <% end %>
+        <% case current_user.user_type %>
+            <% when 'client' %> 
+              <td><%= job.valet_id %></td>
+        <% end %>
+        <td><%= job.status %></td>
+        <td><%= job.user.fullname %></td> 
+        
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         
+      </tr>
+
+    <% end %>
+    
+    
+  </tbody>
+</table>
+
 
 <br>
 <%= javascript_include_tag "map" %>

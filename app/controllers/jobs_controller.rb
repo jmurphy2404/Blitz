@@ -65,7 +65,7 @@ class JobsController < ApplicationController
   def update
     respond_to do |format|
       if @job.update(job_params)
-        format.html { redirect_to @job, notice: 'Job was successfully updated.' }
+        format.html { redirect_to jobs_path, notice: 'Job was successfully updated.' }
         format.json { render :show, status: :ok, location: @job }
       else
         format.html { render :edit }
@@ -79,7 +79,6 @@ class JobsController < ApplicationController
     @valet = User.find params[:valet_id]
     @job.valet = @valet
     # @job.valet_id = @valet.id
-    
 
   end
 

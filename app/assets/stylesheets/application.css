@@ -106,6 +106,10 @@ p {
       line-height: 1.6;
       margin: 0 0 35px; } }
 
+      .col-lg-8.mx-auto {
+        display:inline-block;
+      }
+
 a {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -161,6 +165,10 @@ a {
         background-color: rgba(255, 255, 255, 0.3); }
         #mainNav .nav-link.active:hover {
           color: white; } }
+
+          #navRight_style {
+            float:right;
+          }
 
 .masthead {
   display: table;
@@ -259,9 +267,10 @@ ul.banner-social-buttons {
       margin-top: 15px; } }
   @media (max-width: 767px) {
     ul.banner-social-buttons li {
-      display: block;
+      display:inline-block;
       margin-bottom: 20px;
-      padding: 0; }
+      padding: 50%;
+    float:none; }
       ul.banner-social-buttons li:last-child {
         margin-bottom: 0; } }
 
@@ -289,3 +298,7 @@ img::-moz-selection {
 
 body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2); }
+
+  .row {
+    display: inline-block;
+  }

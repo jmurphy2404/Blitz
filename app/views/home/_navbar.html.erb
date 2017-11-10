@@ -1,4 +1,5 @@
 <ul>
+
       <li><a class="active" href="/">HOME</a></li>
       <li><a href="/bikes">bikes</a></li>
       <li><a href="/jobs">jobs</a></li>
@@ -6,6 +7,7 @@
           <li><%= link_to('LOGOUT', destroy_user_session_path, method: :delete) %></li>
           <% else %>
           <li><%= link_to "login", new_user_session_path %></li>
+
          <li><%= link_to"signup", new_user_registration_path %> </li>
          <li><%= link_to "Become a Valet", valet_sign_up_path %></li>
       <% end %>

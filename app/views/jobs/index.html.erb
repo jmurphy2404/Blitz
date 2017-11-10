@@ -38,8 +38,7 @@
         <th>Current Status</th>
         <th>Client Name</th>
         <th colspan="4"></th>
-      </tr>
-    </thead>
+  </thead>
 
    <tbody>
         <% if current_user %>
@@ -94,6 +93,7 @@
       </tr>
     </thead>
 
+
    <tbody>
         <% @jobs.each do |job| %>
         <tr>
@@ -121,28 +121,32 @@
           <td><%= job.status %></td>
           <td><%= job.user.email %></td> 
         </tr>
-
-      <% end %>
-      
-      
-    </tbody>
-  </table>
-
+    <% end %>
+  </tbody>
+</table>
 </div>
 <br>
-<div class="jobs_map">
+</div>
+</div>
+
 <%= javascript_include_tag "map" %>
 <% case current_user.user_type %>
 <% when 'valet' %>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
 <div id="map"></div>
 <% end %>
-</div>
 
 <br>
 
-</div>
-</div>
 
+<div class="form">
+   <form method="POST" action="http://formspree.io/lisamae135b7@me.com">
+   <button type="button" class="close" data-dismiss="modal">&times;</button><br>
+   <h2 style="color: black;">Send Alert to Customer</h2><br>
+   <input style="height: 40px; display: none;" type="text" name="message" value="Pickup Successful! Your bike is in transit">
+   <br>
+   <input type="submit" value="Picked Up">
+</form>
+</div>
 
 <%= link_to "Create a new request", new_job_path %>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<!--<header class="masthead">
+<header class="masthead">
   <div class="intro-body">
     <div class="container">
       <div class="row">
@@ -14,9 +14,10 @@
       </div>
     </div>
   </div>
-</header>-->
+</header>
 
-<table>
+
+<table id="bikes_style">
   <thead>
     <tr>
       <th></th>
@@ -38,8 +39,9 @@
         <td><%= bike.model %></td>
         <td><%= bike.color %></td>
 
-        <td><%= image_tag (bike.image.url) if bike.image? %></td>
-        <td><%= bike.user.email %></td>
+        <td><%= image_tag(bike.image) %></td>
+
+        <td><%= bike.user.fullname %></td>
 
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Delete', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>

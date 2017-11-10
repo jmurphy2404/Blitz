@@ -50,10 +50,6 @@
         <td><%= job.time.strftime("%I:%M:%S %p") %></td>
 
 
-        
-
-
-       
        <% case current_user.user_type %>
         <% when 'client' %>
         <td><%= job.valet_id %></td>
@@ -71,7 +67,7 @@
         <td><%= job.user.fullname %></td>
 
        <% end %>
-        
+
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -80,12 +76,8 @@
   </tbody>
 </table>
 
-<<<<<<< HEAD
 <br></br>
-<% end %>
 
-<br></br>
-=======
 <br>
 <%= javascript_include_tag "map" %>
 <% case current_user.user_type %>
@@ -97,5 +89,4 @@
 <br>
 
 
->>>>>>> 7ce51ae09b78e31fd67355290984289c5d09a89a
 <%= link_to "Create a new request", new_job_path %>

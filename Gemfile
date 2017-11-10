@@ -58,5 +58,7 @@ gem 'bootstrap-sass'
 gem 'therubyracer'
 gem 'less-rails-bootstrap'
 
- gem "font-awesome-rails"
-  gem 'jquery-easing-rails'
+gem "font-awesome-rails"
+gem 'jquery-easing-rails'
+
+gem 'pony'

@@ -4,9 +4,9 @@
      <li><a href="/jobs">trips</a></li>
 	  <li><a href="/bikes">bikes</a></li>
 	   <% if user_signed_in? %>
-	  	<li><%= link_to('LOGOUT', destroy_user_session_path, method: :delete) %></li>
-	  	<li><%= current_user.email %></li>
-		<li><%= link_to "Settings", edit_user_registration_path %></li>
+	  	<li id="navRight_style"><%= link_to('LOGOUT', destroy_user_session_path, method: :delete) %></li>
+	  	<li id="navRight_style"><%= current_user.email %></li>
+			<li><%= link_to "Settings", edit_user_registration_path %></li>
 
 	  <% else %>
     	<li id="navRight_style"><%= link_to "Become a Valet", valet_sign_up_path %></li>

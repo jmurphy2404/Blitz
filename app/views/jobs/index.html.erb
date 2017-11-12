@@ -49,6 +49,8 @@
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'In_Transit', notify_user_path(:id => job.id, :subject => 'Your bicycle is on its way!'), method: :put, data: { confirm: 'Are you sure you want to email customer?' } %></td>
+        <td><%= link_to 'Delivered', notify_user_path(:id => job.id, :subject => 'Your bicycle has been delivered'), method: :put, data:  { confirm: 'Are you sure you want to email customer?' }  %></td>
       </tr>
     <% end %>
   </tbody>
@@ -130,17 +132,5 @@
 <% end %>
 
 <br>
-
-<div class="form">
-   <form method="POST" action="http://formspree.io/lisamae135b7@me.com">
-   <button type="button" class="close" data-dismiss="modal">&times;</button><br>
-   <h2 style="color: black;">Send Alert to Customer</h2><br>
-   <input style="height: 40px; display: none;" type="text" name="message" value="Pickup Successful! Your bike is in transit">
-   <br>
-   <input type="submit" value="Picked Up">
-</form>
-</div>
-
-
 
 <%= link_to "Create a new request", new_job_path %>

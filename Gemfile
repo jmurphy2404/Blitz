@@ -62,3 +62,7 @@ gem "font-awesome-rails"
 gem 'jquery-easing-rails'
 
 gem 'pony'
+
+gem 'dotenv'
+
+gem 'sendgrid-ruby'

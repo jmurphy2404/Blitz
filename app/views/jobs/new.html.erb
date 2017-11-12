@@ -1,9 +1,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc&libraries=places" type="text/javascript"></script>
-<%= javascript_include_tag "geocoder" %>
+<%= javascript_include_tag "geocode" %>
 
 <h1>New Job</h1>
 
 <%= render 'form', job: @job %>
 
 <%= link_to 'Back', jobs_path %>
-	

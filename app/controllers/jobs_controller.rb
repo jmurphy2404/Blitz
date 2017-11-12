@@ -1,7 +1,10 @@
+require 'dotenv/load'
+require 'sendgrid-ruby'
+
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  
+
   # GET /jobs
   # GET /jobs.json
   def index
@@ -16,7 +19,7 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-    
+
       @jobs = Job.all
     else
 
@@ -79,9 +82,23 @@ class JobsController < ApplicationController
     @valet = User.find params[:valet_id]
     @job.valet = @valet
     # @job.valet_id = @valet.id
-
   end
 
+  def notify_user
+    email_addr = 'lisamae135b7@me.com'  # TODO: get this from @job
+    @job = Job.find(params[:id])
+    #email_addr = @job.bike.user.email
+    from = SendGrid::Email.new(email: 'blitz@example.com')
+    to = SendGrid::Email.new(email: email_addr)
+    subject = "[blitz] #{params[:subject]}"
+    first_name = @job.bike.user.fullname.split(' ', 2)[0]
+    content = SendGrid::Content.new(type: 'text/plain', value: "Hello #{first_name}, thanks for using blitz! #{params[:subject]}.")
+    mail = SendGrid::Mail.new(from, subject, to, content)
+
+    sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
+    redirect_to jobs_url, notice: 'Customer was successfully notified.'
+  end
 
   # DELETE /jobs/1
   # DELETE /jobs/1.json
@@ -95,7 +112,7 @@ class JobsController < ApplicationController
      else
       redirect_to request.referrer, notice: 'You do not have access to this feature. Please sign up as a client.'
     end
-    
+
   end
 
   private

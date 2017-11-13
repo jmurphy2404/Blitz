@@ -11,6 +11,7 @@
 // about supported directives.
 //
 
+//= require axios
 //= require rails-ujs
 //= require jquery
 // require turbolinks

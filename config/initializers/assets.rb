@@ -13,4 +13,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w( map.js )
+Rails.application.config.assets.precompile += %w( jobs_index.js )
 Rails.application.config.assets.precompile += %w( geocode.js )

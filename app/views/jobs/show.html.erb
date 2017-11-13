@@ -56,8 +56,27 @@
 </p>
 
 <% case current_user.user_type %>
-           <% when 'client' %>
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <% when 'client' %>
+    <%= link_to 'Edit', edit_job_path(@job) %> |
+    <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+<br>
+
+<script>
+ var dest_lat = <%= @job.dest_lat %>
+ var dest_lng = <%= @job.dest_lng %> 
+ var origin_lat = <%= @job.origin_lat %>
+ var origin_lng = <%= @job.origin_lng %>
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
+<%= javascript_include_tag "map" %>
+  <% case current_user.user_type %>
+    <% when 'valet' %>
+      <div id="map"></div>
+<% end %>
+
+
+
+
 <%= link_to 'Back', jobs_path %>

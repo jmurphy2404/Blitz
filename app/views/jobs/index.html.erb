@@ -30,7 +30,7 @@
       <th>Valet Assigned</th>
       <th>Current Status</th>
       <th>Client Name</th>
-      <th colspan="5"></th>
+      <th colspan="6"></th>
     </tr>
   </thead>
 
@@ -51,6 +51,7 @@
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button id="directions">Calculate Route</button></td>
         <td><%= link_to 'In_Transit', notify_user_path(:id => job.id, :subject => 'Your bicycle is on its way!'), method: :put, data: { confirm: 'Are you sure you want to email customer?' } %></td>
         <td><%= link_to 'Delivered', notify_user_path(:id => job.id, :subject => 'Your bicycle has been delivered'), method: :put, data:  { confirm: 'Are you sure you want to email customer?' }  %></td>
       </tr>
@@ -67,8 +68,8 @@
 <% end %>
 
 <% case current_user.user_type %>
-          <% when 'client' %>
-        <h1>my trips </h1>
+  <% when 'client' %>
+    <h1>my trips </h1>
 <% end %>
 
 <div class="section_heading">
@@ -121,13 +122,5 @@
   </tbody>
 </table>
 
-
-<br>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
-<%= javascript_include_tag "map" %>
-<% case current_user.user_type %>
-<% when 'valet' %>
-<div id="map"></div>
-<% end %>
 <br>
 <%= button_to 'New Trip', new_job_path, :method => :get, :class => 'newJobButton' %>

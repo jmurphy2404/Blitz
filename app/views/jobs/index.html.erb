@@ -1,9 +1,9 @@
-<!--<header class="masthead">
+<header class="masthead">
   <div class="intro-body">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h1 class="brand-heading">Jobs</h1>
+          <h1 class="brand-heading">My Trips</h1>
 
           <a href="#about" class="btn btn-circle js-scroll-trigger">
             <i class="fa fa-angle-double-down animated"></i>
@@ -13,12 +13,14 @@
     </div>
   </div>
 </header>
--->
+
 
 <% case current_user.user_type %>
-       <% when 'valet' %>
-<h1>My Assignments</h1>
-<table>
+  <% when 'valet' %>
+       <div class="section_heading">
+<h1 class= "section-heading" style="color:black;font-size:300%; font-family:'Francois One', sans-serif">My Assignments</h1>
+<table id="jobs_style">
+
   <thead>
     <tr>
       <th>Bike</th>
@@ -34,6 +36,8 @@
   </thead>
 
  <tbody>
+ </div>
+</div>
       <% if current_user %>
       <% current_user.jobs.each do |job| %>
       <tr>
@@ -66,10 +70,13 @@
 
 <% case current_user.user_type %>
           <% when 'client' %>
-<h1>My Trips</h1>
+          <div class="section_heading">
+<h1 class= "section-heading" style="color:black;font-size:300%;font-family:'Francois One',sans-serif;"></h1>
 <% end %>
 
-<table>
+<div class="section_heading">
+<table id="jobs_style">
+
   <thead>
     <tr>
       <th>Bike</th>
@@ -83,8 +90,10 @@
       <th colspan="4"></th>
     </tr>
   </thead>
+</div>
 
  <tbody>
+</div>
       <% @jobs.each do |job| %>
       <tr>
         <td><%= job.bike.bike_full %></td>
@@ -93,32 +102,25 @@
         <td><%= job.time.strftime("%B %d, %Y") %></td>
         <td><%= job.time.strftime("%I:%M:%S %p") %></td>
         <% case current_user.user_type %>
-          <% when 'valet' %>
-            <% if job.valet_id != nil %>
-              <td>Already assigned</td>
-            <% else %>
-              <%= form_with(model: job, local: true) do |form| %>
-              <%= form.hidden_field :valet_id, id: :job_valet_id, :value => current_user.id %>
-              <td><%= submit_tag 'Work' %></td>
-              <% end %>
-            <% end %>
+        <% when 'valet' %>
+          <% if job.valet_id != nil %>
+            <td>Already assigned</td>
+          <% else %>
+            <%= form_with(model: job, local: true) do |form| %>
+            <%= form.hidden_field :valet_id, id: :job_valet_id, :value => current_user.id %>
+            <td><%= submit_tag 'Work' %></td>
+          <% end %>
         <% end %>
-        <% case current_user.user_type %>
-            <% when 'client' %>
-              <td><%= job.valet_id %></td>
+        <% when 'client' %>
+          <td><%= job.valet_id %></td>
         <% end %>
         <td><%= job.status %></td>
         <td><%= job.user.fullname %></td>
-
         <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
+              <td><%= link_to 'Edit', edit_job_path(job) %></td>
+              <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-
-    <% end %>
-
-
+      <% end %>
   </tbody>
 </table>
 
@@ -132,5 +134,4 @@
 <% end %>
 
 <br>
-
-<%= link_to "Create a new request", new_job_path %>
+<%= button_to 'New Trip', new_job_path, :method => :get, :class => 'newJobButton' %>

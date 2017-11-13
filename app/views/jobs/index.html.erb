@@ -45,7 +45,7 @@
         <td><%= job.bike.bike_full %></td>
         <td><%= job.origin %></td>
         <td><%= job.destination %></td>
-        <td><%= job.time.strftime("%B %d, %Y") %></td>
+        <td><%= job.date.strftime("%B %d, %Y") unless job.date.nil? %></td>
         <td><%= job.time.strftime("%I:%M:%S %p") %></td>
         <td><%= job.valet_id %></td>
         <td><%= job.status %></td>
@@ -100,7 +100,7 @@
         <td><%= job.bike.bike_full %></td>
         <td><%= job.origin %></td>
         <td><%= job.destination %></td>
-        <td><%= job.time.strftime("%B %d, %Y") %></td>
+        <td><%= job.date.strftime("%B %d, %Y") unless job.date.nil? %></td>
         <td><%= job.time.strftime("%I:%M:%S %p") %></td>
         <% case current_user.user_type %>
         <% when 'valet' %>

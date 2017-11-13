@@ -1,63 +1,75 @@
-<p id="notice"><%= notice %></p>
+<div class="modal fade" id="show_job" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h2 class="modal-title" id="myModalLabel">Trip Details</h2>
+      </div>
+        <div class="modal-body">
+          <% current_user.jobs.each do |job| %>
+          <p>
+            <strong>Origin lat:</strong>
+            <span class="data"><%= job.origin_lat %></span>
+          </p>
 
-<p>
-  <strong>Origin lat:</strong>
-  <%= @job.origin_lat %>
-</p>
+         <p>
+            <strong>Origin lng:</strong>
+            <span class="data"><%= job.origin_lng %></span>
+          </p>
 
-<p>
-  <strong>Origin lng:</strong>
-  <%= @job.origin_lng %>
-</p>
+         <p>
+            <strong>Dest lat:</strong>
+            <span class="data"><%= job.dest_lat %></span>
+          </p>
 
-<p>
-  <strong>Dest lat:</strong>
-  <%= @job.dest_lat %>
-</p>
+         <p>
+            <strong>Dest lng:</strong>
+            <span class="data"><%= job.dest_lng %></span>
+          </p>
 
-<p>
-  <strong>Dest lng:</strong>
-  <%= @job.dest_lng %>
-</p>
+         <p>
+            <strong>Origin:</strong>
+            <span class="data"> <%= job.origin %></span>
+          </p>
 
-<p>
-  <strong>Origin:</strong>
-  <%= @job.origin %>
-</p>
+         <p>
+            <strong>Destination:</strong>
+            <span class="data"><%= job.destination %></span>
+          </p>
 
-<p>
-  <strong>Destination:</strong>
-  <%= @job.destination %>
-</p>
+         <p>
+            <strong>Date:</strong>
+            <span class="data"><%= job.date %></span>
+          </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @job.date %>
-</p>
+         <p>
+            <strong>Time:</strong>
+            <span class="data"><%= job.time %></span>
+          </p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @job.time %>
-</p>
+         <p>
+            <strong>Bike:</strong>
+            <span class="data"><%= job.bike_id %></span>
+          </p>
 
-<p>
-  <strong>Bike:</strong>
-  <%= @job.bike_id %>
-</p>
+         <p>
+            <strong>Valet:</strong>
+            <span class="data"><%= job.valet_id %></span>
+          </p>
 
-<p>
-  <strong>Valet:</strong>
-  <%= @job.valet_id %>
-</p>
+         <p>
+            <strong>Status:</strong>
+            <span class="data"><%= job.status %></span>
+          </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @job.status %>
-</p>
-
-<% case current_user.user_type %>
-           <% when 'client' %>
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<% end %>
-<%= link_to 'Back', jobs_path %>
+         <% case current_user.user_type %>
+                     <% when 'client' %>
+          <%= link_to 'Edit', edit_job_path(job) %> |
+          <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' } %> |
+          <% end %>
+          <%= link_to 'Back', jobs_path %>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>

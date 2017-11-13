@@ -13,6 +13,7 @@
   </div>
 </header>
 
+<%= render template: 'jobs/show' %>
 
 <% case current_user.user_type %>
   <% when 'valet' %>
@@ -48,7 +49,7 @@
         <td><%= job.valet_id %></td>
         <td><%= job.status %></td>
         <td><%= job.user.fullname %></td>
-        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Show', job, class: 'show_job' %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'In_Transit', notify_user_path(:id => job.id, :subject => 'Your bicycle is on its way!'), method: :put, data: { confirm: 'Are you sure you want to email customer?' } %></td>
@@ -113,7 +114,7 @@
         <% end %>
         <td><%= job.status %></td>
         <td><%= job.user.fullname %></td>
-        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Show', job, class: 'show_job' %></td>
               <td><%= link_to 'Edit', edit_job_path(job) %></td>
               <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -121,9 +122,9 @@
   </tbody>
 </table>
 
-
 <br>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
+<%= javascript_include_tag "jobs_index" %>
 <%= javascript_include_tag "map" %>
 <% case current_user.user_type %>
 <% when 'valet' %>

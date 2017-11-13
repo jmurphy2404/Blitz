@@ -67,3 +67,4 @@ gem 'pony'
 gem 'dotenv'
 
 gem 'sendgrid-ruby'
+gem 'axios_rails'

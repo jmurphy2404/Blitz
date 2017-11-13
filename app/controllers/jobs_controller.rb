@@ -77,11 +77,17 @@ class JobsController < ApplicationController
     end
   end
 
-  def assign_valet
+
+#  def assign_valet
+#    @job = Job.find(params[:job_id])
+#    @valet = User.find params[:valet_id]
+#    @job.valet = @valet
+#    # @job.valet_id = @valet.id
+#
+#  end
+
+  def update_status
     @job = Job.find(params[:job_id])
-    @valet = User.find params[:valet_id]
-    @job.valet = @valet
-    # @job.valet_id = @valet.id
   end
 
   def notify_user
@@ -100,13 +106,14 @@ class JobsController < ApplicationController
     redirect_to jobs_url, notice: 'Customer was successfully notified.'
   end
 
+
   # DELETE /jobs/1
   # DELETE /jobs/1.json
   def destroy
     if current_user.client?
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
+      format.html { redirect_to jobs_url, notice: 'Job was successfully deleted.' }
       format.json { head :no_content }
     end
      else

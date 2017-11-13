@@ -5,7 +5,7 @@
 	  <li><a href="/bikes">bikes</a></li>
 	   <% if user_signed_in? %>
 	  	<li id="navRight_style"><%= link_to('LOGOUT', destroy_user_session_path, method: :delete) %></li>
-	  	<li id="navRight_style"><%= current_user.email %></li>
+	  	<li id="navRight_style"><a href="#"><%= current_user.email %></a></li>
 			<li><%= link_to "Settings", edit_user_registration_path %></li>
 
 	  <% else %>
@@ -15,3 +15,4 @@
 
 	  <% end %>
   </ul>
+

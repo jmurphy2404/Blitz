@@ -12,27 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :make %>
+    <%= form.label :make %><br>
     <%= form.text_field :make, id: :bike_make %>
   </div>
+  <br>
 
   <div class="field">
-    <%= form.label :model %>
+    <%= form.label :model %><br>
     <%= form.text_field :model, id: :bike_model %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :color %>
+    <%= form.label :color %><br>
     <%= form.text_field :color, id: :bike_color %>
   </div>
-
+  <br>
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image, id: :bike_image %>
   </div>
-
-
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>
+  <br>
 <% end %>

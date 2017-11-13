@@ -1,6 +1,6 @@
-<h1>Editing Bike</h1>
+<h1>Bike Details</h1>
 
 <%= render 'form', bike: @bike %>
 
-<%= link_to 'Show', @bike %> |
-<%= link_to 'Back', bikes_path %>
+<%= link_to 'Cancel', bikes_path %> |
+<%= link_to 'Delete', @bike, method: :delete, data: { confirm: 'Are you sure?' } %>

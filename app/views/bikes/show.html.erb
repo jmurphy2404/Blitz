@@ -16,12 +16,13 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= image_tag (bike.image) %>
+  <%= image_tag (@bike.image) %>
 </p>
 
 
 <%= link_to "Create a request", new_job_path(bike_id: @bike.id) %> |
 
 <%= link_to 'Edit', edit_bike_path(@bike) %> |
+<%= link_to 'Delete', @bike, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', bikes_path %>
+

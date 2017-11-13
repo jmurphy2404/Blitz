@@ -40,6 +40,8 @@
     <%= form.label :destination %>
     <%= form.text_field :destination, id: :job_destination %>
   </div>
+  
+  <button id="geocoder_submit">Click to save destination and origin</button>
 
   <div class="field">
     <%= form.label :date %>
@@ -56,7 +58,7 @@
     <%= collection_select(:job, :bike_id, current_user.bikes, :id, :bike_full, { :prompt => 'Select a bike'} ) %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions" id="submit_post" style="display: none;">
+    <%= form.submit id: :submit_post %>
   </div>
 <% end %>

@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	origin = document.getElementById("job_origin")
 	function getDest (destination){
 		geocoder.geocode({'address': destination}, function (results, status){
+		console.log(results);
 		// coords1 = results[0].geometry.location;
 		var temp1 = results[0].geometry.location.lat();
 		var temp2 = results[0].geometry.location.lng();
@@ -37,7 +38,12 @@ document.addEventListener("DOMContentLoaded", function(){
 		e.preventDefault();
 		getDest(destination.value);
 		getOrigin(origin.value);
-		document.getElementById("submit_post").style.display = "block";
+		// document.getElementById("job_origin").style.visibility = "hidden";
+		// document.getElementById("job_destination").style.visibility = "hidden";
+		document.getElementById("job_date").style.visibility = "visible";
+		document.getElementById("job_time").style.visibility = "visible";
+		document.getElementById("bike_select").style.visibility = "visible";
+		document.getElementById("submit_post").style.visibility = "visible";
 		document.getElementById("geocoder_submit").style.display = "none";
 
 	})

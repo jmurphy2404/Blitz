@@ -1,3 +1,4 @@
+
   <header class="masthead">
   <div class="intro-body">
     <div class="container">
@@ -52,7 +53,8 @@
   </tbody>
 </table>
 <% end %>
-  <% end %>
+<% end %>
+
 <% case current_user.user_type %>
   <% when 'valet' %>
   <h1>All Assignments</h1>
@@ -119,4 +121,8 @@
 <% end %>
 
 <br>
-<%= button_to 'New Trip', new_job_path, :method => :get, :class => 'newJobButton' %>
+<% case current_user.user_type %>
+  <% when 'client' %>
+  <%= button_to 'New Trip', new_job_path, :method => :get, :class => 'newJobButton' %>
+<% end %>
+

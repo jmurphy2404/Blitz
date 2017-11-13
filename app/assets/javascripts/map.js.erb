@@ -19,9 +19,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay){
         window.alert('Directions request failed due to ' + status);
       }
     });
+
 }
 
 setTimeout(initMap, 10);
+
 
 setTimeout(function(){
   calculateAndDisplayRoute(directionsService, directionsDisplay)}, 30);

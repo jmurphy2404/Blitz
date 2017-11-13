@@ -20,7 +20,6 @@ Rails.application.routes.draw do
 
 
 
-
   get 'logout' => "home#logout"
 
 

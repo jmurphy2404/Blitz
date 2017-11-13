@@ -19,7 +19,6 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-
       @jobs = Job.all
     else
 
@@ -88,6 +87,12 @@ class JobsController < ApplicationController
 
   def update_status
     @job = Job.find(params[:job_id])
+  end
+
+  def job_coords
+    @job = Job.find(params[:job_id])
+    @job_coords = User.find params[:job_coords_id]
+
   end
 
   def notify_user

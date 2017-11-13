@@ -25,11 +25,34 @@
 font-family: 'Francois One', sans-serif;
 text-align: center;
 }
+.content-section.text-center {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#about {
+  margin-top: 2px;
+  margin-bottom: 2px;
+
+}
+
+#contact {
+  margin-top: 1px;
+  margin-bottom:1px;
+}
+
+.container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 
 .section_heading {
   text-align: center;
   background-color: lightblue;
   display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
 }
 
@@ -37,6 +60,7 @@ text-align: center;
   text-align: center;
   background-color: lightblue;
   display: inline-block;
+  font-size: 500px;
 
 }
 
@@ -118,6 +142,10 @@ text-align: center;
     color: white;
 }
 
+.fa-bicycle {
+  font-size: 500px
+}
+
 .newJobButton {
 
   display: inline-block;
@@ -156,9 +184,7 @@ text-align: center;
 
  }
 
-
-
- li {
+li {
     float: left;
  }
 
@@ -179,10 +205,17 @@ text-align: center;
     background-color: purple;
  }
 
+ li.list-inline-item {
+   display: inline-block;
+ }
+
  h1 {
 
-   font-family: 'Francois One', sans-serif;
+font-family: 'Francois One', sans-serif;
+font-size: 50px;
+text-align: center;
  }
+
 
 
  /*!
@@ -198,10 +231,7 @@ body {
   color: white;
   background-color: black; }
 
-
-
-
-h6 {
+  h6 {
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   margin: 0 0 35px;
@@ -296,9 +326,11 @@ a {
 
     h1{
       font-size: 50px;
-text-align: center;
+      text-align: center;
 
-
+h2 {
+  font-size:90%;
+}
     }
     .masthead {
       display: table;
@@ -331,8 +363,10 @@ text-align: center;
 
 
 h1.brand-heading {
-  text-align: center;
-  display: inline-block;
+ text-align: center;
+ display: inline-block;
+margin-top: 75px;
+margin-bottom: 75px;
 }
 
 //.btn-circle {
@@ -411,6 +445,8 @@ footer {
   text-align: center;
   width: 100%;
   margin: 0 auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 a.btn.btn-circle.js-scroll-trigger  {

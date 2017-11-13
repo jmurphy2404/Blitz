@@ -5,9 +5,7 @@
         <div class="col-lg-8 mx-auto">
           <h1 class="brand-heading">My Trips</h1>
 
-          <a href="#about" class="btn btn-circle js-scroll-trigger">
-            <i class="fa fa-angle-double-down animated"></i>
-          </a>
+
         </div>
       </div>
     </div>
@@ -70,8 +68,7 @@
 
 <% case current_user.user_type %>
           <% when 'client' %>
-          <div class="section_heading">
-<h1 class= "section-heading" style="color:black;font-size:300%;font-family:'Francois One',sans-serif;"></h1>
+        <h1>my trips </h1>
 <% end %>
 
 <div class="section_heading">
@@ -126,11 +123,12 @@
 
 
 <br>
+<div id="map"></div>
 <%= javascript_include_tag "map" %>
 <% case current_user.user_type %>
 <% when 'valet' %>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
-<div id="map"></div>
+
 <% end %>
 
 <br>

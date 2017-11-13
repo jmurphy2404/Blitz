@@ -191,23 +191,25 @@ a {
       .masthead .intro-body .intro-text {
         font-size: 22px; } }
 
-.btn-circle {
-  font-size: 26px;
-  width: 55px;
-  height: 55px;
-  margin-top: 15px;
-  line-height: 45px;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
-  color: white;
-  border: 2px solid white;
-  border-radius: 100% !important;
-  background: transparent; }
-  .btn-circle:focus, .btn-circle:hover {
-    color: white;
-    outline: none;
-    background: rgba(255, 255, 255, 0.1); }
+  //.btn-circle {
+  //font-size: 26px;
+  //width: 55px;
+  //height: 55px;
+  //margin-top: 15px;
+  //line-height: 45px;
+  //-webkit-transition: background 0.3s ease-in-out;
+  //-moz-transition: background 0.3s ease-in-out;
+  //transition: background 0.3s ease-in-out;
+  //color: white;
+  //border: 2px solid white;
+  //border-radius: 100% !important;
+  //background: transparent; }
+  //.btn-circle:focus, .btn-circle:hover {
+  //  color: white;
+  //  outline: none;
+  //  background: rgba(255, 255, 255, 0.1); }
+
+
 
 .content-section {
   padding-top: 150px;
@@ -222,16 +224,6 @@ a {
   -o-background-size: cover;
   background-size: cover; }
 
-#map {
-  width: 100%;
-  height: 300px; }
-
-@media (min-width: 992px) {
-  .content-section {
-    padding-top: 200px;
-    padding-bottom: 200px; }
-  #map {
-    height: 350px; } }
 
 .btn {
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;

@@ -1,3 +1,5 @@
+
+
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -25,7 +27,7 @@
     <%= form.label :phone_num %>
     <%= form.number_field :phone_num, id: :user_phone_num %>
   </div>
-  
+
   <div class="field">
     <%= form.label :user_type %>
     <%= form.select :user_type, options_for_select([["Client", "client"], ["Valet", "valet"]]) %>

@@ -1,10 +1,11 @@
-<!-- Intro Header for LOG IN Page -->
-<!--<header class="masthead">
+
+<p id="notice"><%= notice %></p>
+<header class="masthead">
   <div class="intro-body">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h1 class="brand-heading">LOG IN</h1>
+          <h1 class="brand-heading">Login</h1>
 
           <a href="#about" class="btn btn-circle js-scroll-trigger">
             <i class="fa fa-angle-double-down animated"></i>
@@ -14,7 +15,14 @@
     </div>
   </div>
 </header>
--->
+
+
+<div class="section_heading">
+<h1 class= "section-heading" style="color:black;font-size:300%">Enter Details</h1>
+
+<div class="section_heading">
+<table id="profile_style">
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">

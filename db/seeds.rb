@@ -13,9 +13,9 @@ User.create([
 ])
 
 Bike.create([
-	{make: "Specialized", model: "Hybrid", color: "blue", image: open("https://ca.slack-edge.com/T03JJLPSP-U6ZECGYG7-ae94039c103a-1024"), user_id: 1},
-	{make: "Trek", model: "Mountain", color: "green", image: open("https://ca.slack-edge.com/T03JJLPSP-U6W6NQZNU-9f74e019eb18-1024"), user_id: 2},
-	{make: "Trek", model: "Road Bike", color: "red", image: open("https://ca.slack-edge.com/T03JJLPSP-U6W6NQZNU-9f74e019eb18-1024"), user_id: 2}
+	{make: "Specialized", model: "Hybrid", color: "blue", image: open("https://www.tredz.co.uk/prodimg/96764_1_Zoom.jpg"), user_id: 1},
+	{make: "Trek", model: "Mountain", color: "green", image: open("https://www.tredz.co.uk/prodimg/96764_1_Zoom.jpg"), user_id: 2},
+	{make: "Trek", model: "Road Bike", color: "red", image: open("https://www.tredz.co.uk/prodimg/96764_1_Zoom.jpg"), user_id: 2}
 ])
 
 Job.create([

@@ -5,23 +5,17 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h1 class="brand-heading">Users</h1>
-
-
-          </a>
+        </a>
         </div>
       </div>
     </div>
   </div>
-</header>
-
-
+  </header>
 <div class="section_heading">
-<h1 class= "section-heading" style="color:brown;font-size:300%;font-family:'Contrail One',cursive;">My Profile</h1>
-
+  <h1 class= "section-heading" style="color:brown;font-size:300%;font-family:'Contrail One',cursive;">My Profile</h1>
 <div class="section_heading">
 <table id="profile_style">
-
-  <thead>
+<thead>
     <tr>
       <th>Fullname</th>
       <th>Address</th>
@@ -31,8 +25,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
-  <tbody>
+   <tbody>
     <% @users.each do |user| %>
       <tr>
         <td><%= user.fullname %></td>
@@ -45,9 +38,8 @@
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
+   </tbody>
 </div>
 </div>
-</table>
-
+ </table>
 <br>

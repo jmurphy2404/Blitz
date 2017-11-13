@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  
+
 
   # GET /users
   # GET /users.json
@@ -18,6 +18,20 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
+  def create
+  # Create the user from params
+  @user = User.new(params[:user])
+  if @user.save
+    # Deliver the signup email
+    UserNotifier.send_signup_email(@user).deliver
+    redirect_to(@user, :notice => 'User created')
+  else
+    render :action => 'new'
+  end
+end
+end
+
 
   # GET /users/1/edit
   def edit

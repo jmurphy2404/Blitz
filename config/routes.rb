@@ -8,13 +8,16 @@ Rails.application.routes.draw do
   resources :bikes
   resources :users
 
-  devise_scope :user do 
+  devise_scope :user do
   	get 'valet/sign_up' => 'registrations#valet_new'
   end
 
   #put 'job/assign' => 'jobs#assign_valet', as: :assign_valet
   
-  put 'job/update_status' => 'jobs#update_status', as: :update_status
+  #put 'job/update_status' => 'jobs#update_status', as: :update_status
+
+  put 'job/notify_user' => 'jobs#notify_user', as: :notify_user
+
 
 
 

@@ -34,10 +34,7 @@
               font-family: 'Francois One', sans-serif;">Here's how it works.</p><style= "font-size:150%;
                  font-family: 'Francois One', sans-serif; color:purple; "><p style= "font-size:150%;
                     font-family: 'Francois One', sans-serif; color:black; ">  Just signup and choose a pickup location then we'll come get your bike and redeliver it to wherever you need it at any given time, rain or shine.</p>
-
-<%= link_to new_job_path do %>
-<button id="btn bin-default ban-lg" class="btn bin-default ban-lg text-uppercase" type="submit">New Trip</button>
-<% end %>
+  <%= button_to 'NEW TRIP', new_job_path, :method => :get, :class => 'newJobButton' %>
 
     </div>
   </div>
@@ -49,7 +46,8 @@
     <div class="col-lg-8 mx-auto">
       <h2>Love Riding Bikes? Come work for us!</h2>
       <p>Become one of our valets and ride bikes to make cash!</p>
-      <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Sign up on our Valet Page</a>
+
+    <%= button_to 'VALET SIGN UP', valet_sign_up_path, :method => :get, :class => 'newJobButton' %>
     </div>
   </div>
 </section>

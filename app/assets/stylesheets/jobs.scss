@@ -1,3 +1,35 @@
 // Place all the styles related to the Jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*//trips page table styles*/
+
+#trips_style  {
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+width: 100%;
+}
+
+#trips_style  td, #trips_style  th {
+border: 1px solid blue;
+padding: 8px;
+}
+
+//#trips_style tr:nth-child(even){background-color: #f2f2f2;}
+
+//#trips_style tr:hover {background-color: #ddd;}
+
+#trips_style th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: brown;
+color: white;
+}
+
+
+.th {
+  border-style: solid;
+  border-color: red;
+}

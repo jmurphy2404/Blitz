@@ -23,12 +23,26 @@
 
 * {
 font-family: 'Francois One', sans-serif;
-
+text-align: center;
 }
 
 .section_heading {
   text-align: center;
   background-color: lightblue;
+  display: inline-block;
+
+}
+
+.brand-heading {
+  text-align: center;
+  background-color: lightblue;
+  display: inline-block;
+
+}
+
+
+#page-top {
+  text-align: center;
 }
 
 /*//boat page table styles*/
@@ -206,6 +220,7 @@ p {
 
       .col-lg-8.mx-auto {
         display:inline-block;
+        text-align: center;
       }
 
 a {
@@ -269,53 +284,74 @@ a {
             float:right;
           }
 
+          #map {
 
-.masthead {
-  display: table;
-  width: 100%;
-  height: auto;
-  padding: 200px 0;
-  text-align: center;
-  color: white;
-  background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
-  background-color: black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-  .masthead .intro-body {
-    display: table-cell;
-    vertical-align: middle; }
-    .masthead .intro-body .brand-heading {
-      font-size: 50px; }
-    .masthead .intro-body .intro-text {
-      font-size: 18px; }
-  @media (min-width: 768px) {
+            overflow: visible;
+            height: 500px;
+          }
+
+          .element{
+            overflow: visible;
+          }
+
+    h1{
+      font-size: 50px;
+text-align: center;
+
+
+    }
     .masthead {
-      height: 100%;
-      padding: 0; }
-      .masthead .intro-body .brand-heading {
-        font-size: 100px; }
-      .masthead .intro-body .intro-text {
-        font-size: 22px; } }
+      display: table;
+      width: 100%;
+      height: auto;
+      padding: 200px 0;
+      text-align: center;
+      color: white;
+      background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
+      background-color: black;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover; }
+      .masthead .intro-body {
+        display: table-cell;
+        vertical-align: middle; }
+        .masthead .intro-body .brand-heading {
+          font-size: 50px; display: inline-block; text-align: center;}
+        .masthead .intro-body .intro-text {
+          font-size: 18px; }
+      @media (min-width: 768px) {
+        .masthead {
+          height: 100%;
+          padding: 0; }
+          .masthead .intro-body .brand-heading {
+            font-size: 100px; }
+          .masthead .intro-body .intro-text {
+            font-size: 22px; } }
 
-.btn-circle {
-  font-size: 26px;
-  width: 55px;
-  height: 55px;
-  margin-top: 15px;
-  line-height: 45px;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
-  color: white;
-  border: 2px solid white;
-  border-radius: 100% !important;
-  background: transparent; }
-  .btn-circle:focus, .btn-circle:hover {
-    color: white;
-    outline: none;
-    background: rgba(255, 255, 255, 0.1); }
+
+h1.brand-heading {
+  text-align: center;
+  display: inline-block;
+}
+
+//.btn-circle {
+//  font-size: 26px;
+//  width: 55px;
+  //height: 55px;
+//  margin-top: 15px;
+//  line-height: 45px;
+//  -webkit-transition: background 0.3s ease-in-out;
+//  -moz-transition: background 0.3s ease-in-out;
+//  transition: background 0.3s ease-in-out;
+//  color: white;
+//  border: 2px solid white;
+////  border-radius: 100% !important;
+//  background: transparent; }
+//  .btn-circle:focus, .btn-circle:hover {
+  //  color: white;
+  //  outline: none;
+  //  background: rgba(255, 255, 255, 0.1); }
 
 .content-section {
   padding-top: 150px;
@@ -331,24 +367,24 @@ a {
   background-size: cover; }
 
 
-.btn {
-  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  text-transform: uppercase;
-  border-radius: 0; }
+//.btn {
+//  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+//  font-weight: 400;
+//  -webkit-transition: all 0.3s ease-in-out;
+//  -moz-transition: all 0.3s ease-in-out;
+//  transition: all 0.3s ease-in-out;
+//  text-transform: uppercase;
+//  border-radius: 0; }
 
-.btn-default {
-  color: #42DCA3;
-  border: 1px solid #42DCA3;
-  background-color: transparent; }
-  .btn-default:focus, .btn-default:hover {
-    color: black;
-    border: 1px solid #42DCA3;
-    outline: none;
-    background-color: #42DCA3; }
+//.btn-default {
+//  color: #42DCA3;
+//  border: 1px solid #42DCA3;
+//  background-color: transparent; }
+//  .btn-default:focus, .btn-default:hover {
+//    color: black;
+  //  border: 1px solid #42DCA3;
+  //  outline: none;
+  //  background-color: #42DCA3; }
 
 ul.banner-social-buttons {
   margin-top: 0; }
@@ -369,3 +405,14 @@ footer {
   footer p {
     font-size: 14px;
     margin: 0; }
+
+    .col-lg-8.mx-auto {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+a.btn.btn-circle.js-scroll-trigger  {
+  display: none;
+}

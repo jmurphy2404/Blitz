@@ -284,6 +284,16 @@ a {
             float:right;
           }
 
+          #map {
+
+            overflow: visible;
+            height: 500px;
+          }
+
+          .element{
+            overflow: visible;
+          }
+
     h1{
       font-size: 50px;
 text-align: center;

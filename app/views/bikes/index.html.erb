@@ -5,7 +5,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h1 class="brand-heading">Bikes</h1>
+          <h1 class="brand-heading">My Bikes</h1>
+          <%= link_to 'Add a new bike', new_bike_path %>
 
           <a href="#about" class="btn btn-circle js-scroll-trigger">
             <i class="fa fa-angle-double-down animated"></i>
@@ -34,17 +35,17 @@
   <tbody>
     <% @bikes.each do |bike| %>
       <tr>
-        <td><%= link_to 'details', bike %><i class="glyphicon glyphicon-search"></i></td>
+        <td title="Details"><%= link_to bike do %>
+              <%= fa_icon "search" %>
+              <% end %> 
+        </td>
         <td><%= bike.make %></td>
         <td><%= bike.model %></td>
         <td><%= bike.color %></td>
 
         <td><%= image_tag(bike.image) %></td>
 
-        <td><%= bike.user.fullname %></td>
-
-        <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
-        <td><%= link_to 'Delete', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= bike.user.email %></td>
 
       </tr>
     <% end %>
@@ -53,5 +54,4 @@
 
 <br>
 
-<%= link_to 'Add a new bike', new_bike_path %> |
-<%= link_to "Create a new request", new_job_path %>
+

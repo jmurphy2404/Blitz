@@ -44,12 +44,15 @@
         <% if current_user %>
         <% current_user.jobs.each do |job| %>
         <tr>
-          <td><%= link_to 'details', job %><i class="glyphicon glyphicon-search"></i></td>
+          <td><%= link_to job do %>
+              <%= fa_icon "search" %>
+            <% end %> 
+          </td>
           <td><%= job.bike.bike_full %></td>
           <td><%= job.origin %></td>
           <td><%= job.destination %></td>
-          <td><%= job.time.strftime("%B %d, %Y") %></td>
-          <td><%= job.time.strftime("%I:%M:%S %p") %></td>
+          <td><%= job.date.strftime("%B %d, %Y") unless job.date.nil? %></td>
+          <td><%= job.time.strftime("%I:%M %p") %></td>
           <td><%= job.valet_id %></td>
           <td><%= job.status %></td>
           <td><%= job.user.email %></td>
@@ -75,6 +78,7 @@
   <% case current_user.user_type %>
             <% when 'client' %>
   <h1>My Trips</h1>
+  <%= link_to 'Create a new request', new_job_path %>
   <% end %>
 
   <table>
@@ -97,12 +101,15 @@
    <tbody>
         <% @jobs.each do |job| %>
         <tr>
-          <td><%= link_to 'details', job %><i class="glyphicon glyphicon-search"></i></td>     
+          <td><%= link_to job do %>
+              <%= fa_icon "search" %>
+            <% end %> 
+          </td>
           <td><%= job.bike.bike_full %></td>
           <td><%= job.origin %></td>
           <td><%= job.destination %></td>
-          <td><%= job.time.strftime("%B %d, %Y") %></td>
-          <td><%= job.time.strftime("%I:%M:%S %p") %></td>
+          <td><%= job.date.strftime("%B %d, %Y") unless job.date.nil? %></td>
+          <td><%= job.time.strftime("%I:%M %p") %></td>
           <% case current_user.user_type %>
             <% when 'valet' %>
               <% if job.valet_id != nil %>
@@ -149,4 +156,4 @@
 </form>
 </div>
 
-<%= link_to "Create a new request", new_job_path %>
+

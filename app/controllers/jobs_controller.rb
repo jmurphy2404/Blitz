@@ -94,7 +94,7 @@ class JobsController < ApplicationController
     if current_user.client?
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
+      format.html { redirect_to jobs_url, notice: 'Job was successfully deleted.' }
       format.json { head :no_content }
     end
      else

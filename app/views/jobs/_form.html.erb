@@ -43,12 +43,12 @@
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.date_field :date, id: :job_job_date %>
+    <%= form.date_select(:date, :order => [:month, :day, :year], id: :job_job_date) %>
   </div>
 
   <div class="field">
     <%= form.label :time %>
-    <%= form.time_field :time, id: :job_job_time %>
+    <%= form.time_select :time, id: :job_job_time %>
   </div>
 
   <div class="field">

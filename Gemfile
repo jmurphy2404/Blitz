@@ -51,6 +51,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 gem 'carrierwave', '~> 1.0'
+gem 'carrierwave-mimetype-fu'
 
 gem 'jquery-rails'
 gem 'bootstrap-sass'
@@ -62,3 +63,7 @@ gem "font-awesome-rails"
 gem 'jquery-easing-rails'
 
 gem 'pony'
+
+gem 'dotenv'
+
+gem 'sendgrid-ruby'

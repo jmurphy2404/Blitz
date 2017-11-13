@@ -13,22 +13,22 @@
 
   <div class="field hiddenfield">
     <%= form.label :origin_lat %>
-    <%= form.text_field :origin_lat, id: :job_origin_lat %>
+    <%= form.text_field :origin_lat, id: :job_origin_lat, :readonly => true %>
   </div>
 
   <div class="field hiddenfield">
     <%= form.label :origin_lng %>
-    <%= form.text_field :origin_lng, id: :job_origin_lng %>
+    <%= form.text_field :origin_lng, id: :job_origin_lng, :readonly => true %>
   </div>
 
   <div class="field hiddenfield">
     <%= form.label :dest_lat %>
-    <%= form.text_field :dest_lat, id: :job_dest_lat %>
+    <%= form.text_field :dest_lat, id: :job_dest_lat, :readonly => true %>
   </div>
 
   <div class="field hiddenfield">
     <%= form.label :dest_lng %>
-    <%= form.text_field :dest_lng, id: :job_dest_lng %>
+    <%= form.text_field :dest_lng, id: :job_dest_lng, :readonly => true %>
   </div>
 
   <div class="field">
@@ -43,22 +43,22 @@
   
   <button id="geocoder_submit">Click to save destination and origin</button>
 
-  <div class="field">
+  <div id="job_date" style="visibility: hidden;">
     <%= form.label :date %>
     <%= form.date_field :date, id: :job_job_date %>
   </div>
 
-  <div class="field">
+  <div id="job_time" style="visibility: hidden;">
     <%= form.label :time %>
     <%= form.time_field :time, id: :job_job_time %>
   </div>
 
-  <div class="field">
+  <div id="bike_select" style="visibility: hidden;">
     <%= form.label :bike_id %>
     <%= collection_select(:job, :bike_id, current_user.bikes, :id, :bike_full, { :prompt => 'Select a bike'} ) %>
   </div>
 
-  <div class="actions" id="submit_post" style="display: none;">
+  <div class="actions" id="submit_post" style="visibility: hidden;">
     <%= form.submit id: :submit_post %>
   </div>
 <% end %>

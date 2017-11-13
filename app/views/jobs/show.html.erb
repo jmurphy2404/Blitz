@@ -68,3 +68,87 @@
       </div>
   </div>
 </div>        
+=======
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origin lat:</strong>
+  <%= @job.origin_lat %>
+</p>
+
+<p>
+  <strong>Origin lng:</strong>
+  <%= @job.origin_lng %>
+</p>
+
+<p>
+  <strong>Dest lat:</strong>
+  <%= @job.dest_lat %>
+</p>
+
+<p>
+  <strong>Dest lng:</strong>
+  <%= @job.dest_lng %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @job.origin %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @job.destination %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @job.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @job.time %>
+</p>
+
+<p>
+  <strong>Bike:</strong>
+  <%= @job.bike_id %>
+</p>
+
+<p>
+  <strong>Valet:</strong>
+  <%= @job.valet_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @job.status %>
+</p>
+
+<% case current_user.user_type %>
+  <% when 'client' %>
+    <%= link_to 'Edit', edit_job_path(@job) %> |
+    <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<br>
+
+<script>
+ var dest_lat = <%= @job.dest_lat %>
+ var dest_lng = <%= @job.dest_lng %> 
+ var origin_lat = <%= @job.origin_lat %>
+ var origin_lng = <%= @job.origin_lng %>
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
+<%= javascript_include_tag "map" %>
+  <% case current_user.user_type %>
+    <% when 'valet' %>
+      <div id="map"></div>
+<% end %>
+
+
+
+
+<%= link_to 'Back', jobs_path %>
+

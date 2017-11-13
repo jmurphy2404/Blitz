@@ -1,37 +1,30 @@
-var map;
-
-
-
 function initMap() {
-    var directionsService = new google.maps.DirectionsService;
-    var directionsDisplay = new google.maps.DirectionsRenderer;
-    map = new google.maps.Map(document.getElementById('map'), {
+  directionsDisplay = new google.maps.DirectionsRenderer;
+  directionsService = new google.maps.DirectionsService;
+  var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 40.7831, lng: -73.9712},
         zoom: 11
     });
-
     directionsDisplay.setMap(map);
-
-    var onChangeHandler = function() {
-      calculateAndDisplayRoute(directionsService, directionsDisplay);
-
-    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-        directionsService.route({
-          origin: document.getElementById('origin').value,
-          destination: document.getElementById('destination').value,
-          travelMode: 'BICYCLING'
-        }, function(response, status) {
-          if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-          } else {
-            window.alert('Directions request failed due to ' + status);
-          }
-        });
+}
+function calculateAndDisplayRoute(directionsService, directionsDisplay){
+    directionsService.route({
+      origin: {lat: origin_lat, lng: origin_lng},
+      destination: {lat: dest_lat, lng: dest_lng},
+      travelMode: 'BICYCLING'
+    }, function(response, status) {
+      if (status === 'OK') {
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
       }
+    });
+
 }
 
 setTimeout(initMap, 10);
 
-function drawDirections() {
 
-}
+setTimeout(function(){
+  calculateAndDisplayRoute(directionsService, directionsDisplay)}, 30);
+

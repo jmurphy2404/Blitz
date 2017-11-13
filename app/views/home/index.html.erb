@@ -1,57 +1,46 @@
-<!-- home landing page -->
+<!-- Home Landing Page -->
 <!-- Intro Header -->
 <header class="masthead">
   <div class="intro-body">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h1 class="brand-heading">Blitz</h1>
-
-          <p class="intro-text">A way to get your bike anytime, anywhere.</p>
-
-
+      <h1 class="brand-heading">Blitz</h1>
+      <p class="intro-text">A way to get your bike anytime, anywhere.</p>
         </div>
       </div>
     </div>
   </div>
-</header>
-
+  </header>
 <!-- About Section -->
 <section id="about" class="content-section text-center">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
         <%= link_to new_job_path do %>
-        <i class="fa fa-bicycle fa-5x" aria-hidden="true"></i>
+        <i class="fa fa-bicycle" style="font-size:225px"></i>
+
      </span>
   <% end %>
-
-        <h2>About Blitz</h2>
-        <p style= "font-size:150%;
-           font-family: 'Francois One', sans-serif; color:black; ">Blitz is a service that gets your bike to you wherever you are, and when you aren't riding it, it's always in a safe place. <p style= "font-size:200%;
+<h2>About Blitz</h2>
+  <p style= "font-size:150%;font-family: 'Francois One', sans-serif; color:black; ">Blitz is a service that gets your bike to you wherever you are, and when you aren't riding it, it's always in a safe place. <p style= "font-size:200%;
               font-family: 'Francois One', sans-serif;">Here's how it works.</p><style= "font-size:150%;
                  font-family: 'Francois One', sans-serif; color:purple; "><p style= "font-size:150%;
-                    font-family: 'Francois One', sans-serif; color:black; ">  Just signup and choose a pickup location then we'll come get your bike and redeliver it to wherever you need it at any given time, rain or shine.</p>
+                    font-family: 'Francois One', sans-serif; color:black; ">Just signup and choose a pickup location then we'll come get your bike and redeliver it to wherever you need it at any given time, rain or shine.</p>
   <%= button_to 'NEW TRIP', new_job_path, :method => :get, :class => 'newJobButton' %>
-
-    </div>
+  </div>
   </div>
 </section>
-
-<!-- Download Section -->
+<!-- Valet SignUp Section -->
 <section id="download" class="download-section content-section text-center">
   <div class="container">
     <div class="col-lg-8 mx-auto">
       <h2>Love Riding Bikes? Come work for us!</h2>
       <p>Become one of our valets and ride bikes to make cash!</p>
-
-    <%= button_to 'VALET SIGN UP', valet_sign_up_path, :method => :get, :class => 'newJobButton' %>
+      <%= button_to 'VALET SIGN UP', valet_sign_up_path, :method => :get, :class => 'newJobButton' %>
     </div>
   </div>
-</section>
-
-
-
+  </section>
 <!-- Contact Section -->
 <section id="contact" class="content-section text-center">
   <div class="container">
@@ -60,47 +49,10 @@
         <h2>Contact Us</h2>
         <p>Feel free to leave us a comment on the
           <a href="http://startbootstrap.com/template-overviews/grayscale/">Blitz comment page</a>
-        to give some feedback about our service!</p>
-        <ul class="list-inline banner-social-buttons">
-          <li class="list-inline-item">
-            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
-              <i class="fa fa-twitter fa-fw"></i>
-              <span class="network-name">Twitter</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://github.com/BlackrockDigital/startbootstrap" class="btn btn-default btn-lg">
-              <i class="fa fa-github fa-fw"></i>
-              <span class="network-name">Github</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg">
-              <i class="fa fa-google-plus fa-fw"></i>
-              <span class="network-name">SnapChat</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
-              <i class="fa fa-twitter fa-fw"></i>
-              <span class="network-name">Twitter</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
-              <i class="fa fa-twitter fa-fw"></i>
-              <span class="network-name">Twitter</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
+         to give some feedback about our service!</p>
 <!-- Footer -->
 <footer>
   <div class="container text-center">
-    <p>Copyright © lisa/don/john 2017</p>
+    <p>Copyright © 2017</p>
   </div>
 </footer>

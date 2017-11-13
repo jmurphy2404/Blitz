@@ -1,24 +1,20 @@
-<header class="masthead">
+
+  <header class="masthead">
   <div class="intro-body">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h1 class="brand-heading">My Trips</h1>
-
-
+            <h1 class="brand-heading">My Trips</h1>
         </div>
       </div>
     </div>
   </div>
-</header>
-
-
+  </header>
 <% case current_user.user_type %>
   <% when 'valet' %>
        <div class="section_heading">
 <h1 class= "section-heading" style="color:black;font-size:300%; font-family:'Francois One', sans-serif">My Assignments</h1>
-<table id="jobs_style">
-
+  <table id="jobs_style">
   <thead>
     <tr>
       <th>Bike</th>
@@ -29,11 +25,10 @@
       <th>Valet Assigned</th>
       <th>Current Status</th>
       <th>Client Name</th>
-      <th colspan="5"></th>
+      <th colspan="6"></th>
     </tr>
   </thead>
-
- <tbody>
+  <tbody>
  </div>
 </div>
       <% if current_user %>
@@ -50,6 +45,7 @@
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button id="directions">Calculate Route</button></td>
         <td><%= link_to 'In_Transit', notify_user_path(:id => job.id, :subject => 'Your bicycle is on its way!'), method: :put, data: { confirm: 'Are you sure you want to email customer?' } %></td>
         <td><%= link_to 'Delivered', notify_user_path(:id => job.id, :subject => 'Your bicycle has been delivered'), method: :put, data:  { confirm: 'Are you sure you want to email customer?' }  %></td>
       </tr>
@@ -59,27 +55,19 @@
 <% end %>
 <% end %>
 
-
-
-
-
-
-
-
 <% case current_user.user_type %>
   <% when 'valet' %>
   <h1>All Assignments</h1>
 <% end %>
 
-<% case current_user.user_type %>
-          <% when 'client' %>
-        <h1>my trips </h1>
-<% end %>
+  <% case current_user.user_type %>
+  <% when 'client' %>
+<br>
+  <% end %>
 
 <div class="section_heading">
 <table id="jobs_style">
-
-  <thead>
+<thead>
     <tr>
       <th>Bike</th>
       <th>Origin</th>
@@ -93,10 +81,9 @@
     </tr>
   </thead>
 </div>
-
- <tbody>
+<tbody>
 </div>
-      <% @jobs.each do |job| %>
+<% @jobs.each do |job| %>
       <tr>
         <td><%= job.bike.bike_full %></td>
         <td><%= job.origin %></td>
@@ -121,12 +108,10 @@
         <td><%= link_to 'Show', job %></td>
               <td><%= link_to 'Edit', edit_job_path(job) %></td>
               <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+            </tr>
       <% end %>
   </tbody>
-</table>
-
-
+ </table>
 <br>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
 <%= javascript_include_tag "map" %>
@@ -134,8 +119,10 @@
 <% when 'valet' %>
 <div id="map"></div>
 <% end %>
+
 <br>
 <% case current_user.user_type %>
   <% when 'client' %>
   <%= button_to 'New Trip', new_job_path, :method => :get, :class => 'newJobButton' %>
 <% end %>
+

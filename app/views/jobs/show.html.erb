@@ -1,78 +1,95 @@
 <p id="notice"><%= notice %></p>
-<div id="map_coords">
-<p>
-  <strong>Origin lat:</strong>
-  <%= @job.origin_lat %>
-</p>
-
-<p>
-  <strong>Origin lng:</strong>
-  <%= @job.origin_lng %>
-</p>
-
-<p>
-  <strong>Dest lat:</strong>
-  <%= @job.dest_lat %>
-</p>
-
-<p>
-  <strong>Dest lng:</strong>
-  <%= @job.dest_lng %>
-</p>
-
+<header class="masthead">
+<div class="intro-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+          <h1 class="brand-heading">Trip Details</h1>
+      </div>
+    </div>
+  </div>
 </div>
+</header>
 
-<p>
-  <strong>Origin:</strong>
-  <%= @job.origin %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" style="margin-top:5%;">
+      <div id="map_coords">
+      <p>
+        <strong>Origin lat:</strong>
+        <%= @job.origin_lat %>
+      </p>
 
-<p>
-  <strong>Destination:</strong>
-  <%= @job.destination %>
-</p>
+      <p>
+        <strong>Origin lng:</strong>
+        <%= @job.origin_lng %>
+      </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @job.date.strftime("%B %d, %Y") unless @job.date.nil? %>
-</p>
+      <p>
+        <strong>Dest lat:</strong>
+        <%= @job.dest_lat %>
+      </p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @job.time.strftime("%I:%M:%S %p") %>
-</p>
+      <p>
+        <strong>Dest lng:</strong>
+        <%= @job.dest_lng %>
+      </p>
 
-<p>
-  <strong>Bike:</strong>
-  <%= @job.bike.bike_full %>
-</p>
+      </div>
 
-<p>
-  <strong>Valet:</strong>
-  <%= @job.valet_id %>
-</p>
+      <p>
+        <strong>Origin:</strong>
+        <%= @job.origin %>
+      </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @job.status %>
-</p>
+      <p>
+        <strong>Destination:</strong>
+        <%= @job.destination %>
+      </p>
 
-<% case current_user.user_type %>
-  <% when 'client' %>
-    <%= link_to 'Edit', edit_job_path(@job) %> |
-    <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %> | 
-    <%= link_to 'Back', jobs_path %>
-<% end %>
-<br>
+      <p>
+        <strong>Date:</strong>
+        <%= @job.date.strftime("%B %d, %Y") unless @job.date.nil? %>
+      </p>
 
-<script>
- var dest_lat = <%= @job.dest_lat %>
- var dest_lng = <%= @job.dest_lng %> 
- var origin_lat = <%= @job.origin_lat %>
- var origin_lng = <%= @job.origin_lng %>
-</script>
+      <p>
+        <strong>Time:</strong>
+        <%= @job.time.strftime("%I:%M:%S %p") %>
+      </p>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
+      <p>
+        <strong>Bike:</strong>
+        <%= @job.bike.bike_full %>
+      </p>
+
+      <p>
+        <strong>Valet:</strong>
+        Valet #<%= @job.valet_id %>
+      </p>
+
+      <p>
+        <strong>Status:</strong>
+        <%= @job.status %>
+      </p>
+
+      <% case current_user.user_type %>
+        <% when 'client' %>
+          <%= link_to 'Edit', edit_job_path(@job) %> |
+          <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+      <% end %>
+      <%= link_to 'Back', jobs_path %>
+    </div>
+    <br>
+    <div class="col-md-6" >
+
+      <script>
+       var dest_lat = <%= @job.dest_lat %>
+       var dest_lng = <%= @job.dest_lng %> 
+       var origin_lat = <%= @job.origin_lat %>
+       var origin_lng = <%= @job.origin_lng %>
+      </script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
 <%= javascript_include_tag "map" %>
   <% case current_user.user_type %>
     <% when 'valet' %>
@@ -81,8 +98,7 @@
       <div id="right-panel" style="height: 300px;"></div>
 <% end %>
 
-
-
-
-
+    </div>
+  </div>
+</div>
 

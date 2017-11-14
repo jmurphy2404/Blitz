@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <header class="masthead">
   <div class="intro-body">
     <div class="container">
@@ -22,8 +20,7 @@
       <th>Model</th>
       <th>Color</th>
       <th>Image</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -35,11 +32,7 @@
         <td><%= link_to bike.model, bike, data: {behavior: "bike-link", bike_id: bike.id} %></td>
         <td><%= link_to bike.color, bike, data: {behavior: "bike-link", bike_id: bike.id} %></td>
         <td><%= image_tag(bike.image) %></td>
-        <td><%= bike.user.email %></td>
         <td><%= link_to 'Details', bike %></td>
-        <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
-        <td><%= link_to 'Delete', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
       </tr>
     <% end %>
   </tbody>
@@ -49,5 +42,5 @@
 
 
 
-<%= button_to 'Add a new bike', new_bike_path, :method => :get, :class => 'newJobButton' %>
-<%= button_to 'Create new request', new_job_path, :method => :get, :class => 'newJobButton' %>
+<%= button_to 'Add Bike', new_bike_path, :method => :get, :class => 'newJobButton' %>
+<%= button_to 'New Request', new_job_path, :method => :get, :class => 'newJobButton' %>

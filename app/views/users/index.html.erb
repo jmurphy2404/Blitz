@@ -30,7 +30,7 @@
       <tr>
         <td><%= user.fullname %></td>
         <td><%= user.address %></td>
-        <td><%= user.phone_num %></td>
+        <td><%= number_to_phone(user.phone_num, area_code: true) %></td>
         <td><%= user.user_type %></td>
         <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>

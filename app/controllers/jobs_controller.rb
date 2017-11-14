@@ -102,7 +102,7 @@ class JobsController < ApplicationController
     from = SendGrid::Email.new(email: 'blitz@example.com')
     to = SendGrid::Email.new(email: email_addr)
     subject = "[blitz] #{params[:subject]}"
-    first_name = @job.bike.user.fullname.split(' ', 2)[0]
+    first_name = @job.bike.user.fullname
     content = SendGrid::Content.new(type: 'text/plain', value: "Hello #{first_name}, thanks for using blitz! #{params[:subject]}.")
     mail = SendGrid::Mail.new(from, subject, to, content)
 

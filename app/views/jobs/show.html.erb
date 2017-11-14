@@ -90,11 +90,15 @@
       </script>
 
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJJsoaUUfc25r2O8ZSHIv5pFRHPHgaIc"></script>
-      <%= javascript_include_tag "map" %>
-        <% case current_user.user_type %>
-          <% when 'valet' %>
-            <div id="map"></div>
-      <% end %>
+<%= javascript_include_tag "map" %>
+  <% case current_user.user_type %>
+    <% when 'valet' %>
+      <div id="map" style="position: relative; overflow: hidden; width: 600px; margin: 0 auto; display: block;"></div>
+
+      <div id="right-panel" style="height: 300px;"></div>
+<% end %>
+
     </div>
   </div>
 </div>
+

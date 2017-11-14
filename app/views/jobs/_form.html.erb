@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+<div id="map_coords">
   <div class="field hiddenfield">
     <%= form.label :origin_lat %>
     <%= form.text_field :origin_lat, id: :job_origin_lat, :readonly => true %>
@@ -30,6 +31,7 @@
     <%= form.label :dest_lng %>
     <%= form.text_field :dest_lng, id: :job_dest_lng, :readonly => true %>
   </div>
+</div>
 
   <div class="field">
     <%= form.label :origin %>

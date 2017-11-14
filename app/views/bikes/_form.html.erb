@@ -27,9 +27,16 @@
     <%= form.text_field :color, id: :bike_color %>
   </div>
   <br>
+  
+  <div>
+    <%= form.label :image %><br>
+  </div>
+  <div class="field" style="margin-left: 48%">
+    <%= form.file_field :image %>
+  </div>
+  <br>
   <div class="field">
-    <%= form.label :image %>
-
+   <%= form.submit id: :submit_post %>
   </div>
 
 <% end %>

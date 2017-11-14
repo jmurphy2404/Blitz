@@ -100,6 +100,11 @@ text-align: center;
 
 /*//bike page table styles*/
 
+#bike_image {
+  display:inline-block;
+  text-align: center;
+}
+
 #bikes_style  {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -182,7 +187,7 @@ text-align: center;
     list-style-type: none;
     margin: 12;
     padding: 50;
-    //overflow: hidden;
+    overflow: hidden;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
 

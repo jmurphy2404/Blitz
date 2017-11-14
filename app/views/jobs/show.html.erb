@@ -71,8 +71,9 @@
         <strong>Status:</strong>
         <%= @job.status %>
       </p>
-
-      <div id="right-panel" style="height: 300px;"></div>
+      <div id="scroll-area">
+      <div id="right-panel" style="height: 200px;"></div>
+      </div>
       </div>
       <% case current_user.user_type %>
         <% when 'client' %>
@@ -103,4 +104,3 @@
     </div>
   </div>
 </div>
-

@@ -1,76 +1,5 @@
-<h2>Trip Details</h2>
-      </div>
-        <div class="modal-body">
-          <% current_user.jobs.each do |job| %>
-          <p>
-            <strong>Origin lat:</strong>
-            <%= job.origin_lat %>
-          </p>
-
-          <p>
-            <strong>Origin lng:</strong>
-            <%= job.origin_lng %>
-          </p>
-
-          <p>
-            <strong>Dest lat:</strong>
-            <%= job.dest_lat %>
-          </p>
-
-          <p>
-            <strong>Dest lng:</strong>
-            <%= job.dest_lng %>
-          </p>
-
-          <p>
-            <strong>Origin:</strong>
-            <%= job.origin %>
-          </p>
-
-          <p>
-            <strong>Destination:</strong>
-            <%= job.destination %>
-          </p>
-
-          <p>
-            <strong>Date:</strong>
-            <%= job.date %>
-          </p>
-
-          <p>
-            <strong>Time:</strong>
-            <%= job.time %>
-          </p>
-
-          <p>
-            <strong>Bike:</strong>
-            <%= job.bike_id %>
-          </p>
-
-          <p>
-            <strong>Valet:</strong>
-            <%= job.valet_id %>
-          </p>
-
-          <p>
-            <strong>Status:</strong>
-            <%= job.status %>
-          </p>
-
-          <% case current_user.user_type %>
-                     <% when 'client' %>
-          <%= link_to 'Edit', edit_job_path(job) %> |
-          <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' } %> |
-          <% end %>
-          <%= link_to 'Back', jobs_path %>
-          <% end %>
-        </div>
-      </div>
-  </div>
-</div>        
-=======
 <p id="notice"><%= notice %></p>
-
+<div id="map_coords">
 <p>
   <strong>Origin lat:</strong>
   <%= @job.origin_lat %>
@@ -91,6 +20,8 @@
   <%= @job.dest_lng %>
 </p>
 
+</div>
+
 <p>
   <strong>Origin:</strong>
   <%= @job.origin %>
@@ -103,17 +34,17 @@
 
 <p>
   <strong>Date:</strong>
-  <%= @job.date %>
+  <%= @job.date.strftime("%B %d, %Y") unless @job.date.nil? %>
 </p>
 
 <p>
   <strong>Time:</strong>
-  <%= @job.time %>
+  <%= @job.time.strftime("%I:%M:%S %p") %>
 </p>
 
 <p>
   <strong>Bike:</strong>
-  <%= @job.bike_id %>
+  <%= @job.bike.bike_full %>
 </p>
 
 <p>
@@ -129,7 +60,8 @@
 <% case current_user.user_type %>
   <% when 'client' %>
     <%= link_to 'Edit', edit_job_path(@job) %> |
-    <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+    <%= link_to 'Back', jobs_path %>
 <% end %>
 <br>
 
@@ -150,5 +82,5 @@
 
 
 
-<%= link_to 'Back', jobs_path %>
+
 

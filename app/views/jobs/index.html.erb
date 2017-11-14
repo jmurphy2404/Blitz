@@ -41,13 +41,11 @@
         <td><%= job.time.strftime("%I:%M:%S %p") %></td>
         <td><%= job.valet_id %></td>
         <td><%= job.status %></td>
-        <td><%= job.user.fullname %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><button id="directions">Calculate Route</button></td>
+        <td><%= job.user.email %></td>
+        <td><%= link_to 'Details', job %></td>
         <td><button id="InTransit"><%= link_to 'In Transit', notify_user_path(:id => job.id, :subject => 'Your bicycle is on its way!'), method: :put, data: { confirm: 'Are you sure you want to email customer?' } %></button></td>
         <td><button id= "Delivered"><%= link_to 'Delivered', notify_user_path(:id => job.id, :subject => 'Your bicycle has been delivered'), method: :put, data:  { confirm: 'Are you sure you want to email customer?' } %></button></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -104,11 +102,14 @@
           <td><%= job.valet_id %></td>
         <% end %>
         <td><%= job.status %></td>
-        <td><%= job.user.fullname %></td>
-        <td><%= link_to 'Show', job %></td>
-              <td><%= link_to 'Edit', edit_job_path(job) %></td>
-              <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
+        <td><%= job.user.email %></td>
+        <td><%= link_to 'Details', job %></td>
+        <% case current_user.user_type %>
+        <% when 'client' %>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
       <% end %>
   </tbody>
  </table>

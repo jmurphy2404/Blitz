@@ -90,5 +90,4 @@ end
     def user_params
       params.require(:user).permit(:fullname, :address, :phone_num, :user_type)
     end
-
-end
+    

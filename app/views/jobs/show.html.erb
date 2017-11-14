@@ -13,7 +13,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6" style="margin-top:5%;">
+    <div class="col-md-6" style="margin-top:2%;">
       <div id="map_coords">
       <p>
         <strong>Origin lat:</strong>
@@ -72,13 +72,15 @@
         <%= @job.status %>
       </p>
 
+      <div id="right-panel" style="height: 300px;"></div>
+      </div>
       <% case current_user.user_type %>
         <% when 'client' %>
           <%= link_to 'Edit', edit_job_path(@job) %> |
           <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %> | 
       <% end %>
       <%= link_to 'Back', jobs_path %>
-    </div>
+
     <br>
     <div class="col-md-6" >
 
@@ -93,9 +95,9 @@
 <%= javascript_include_tag "map" %>
   <% case current_user.user_type %>
     <% when 'valet' %>
-      <div id="map" style="position: relative; overflow: hidden; width: 600px; margin: 0 auto; display: block;"></div>
+      <div id="map" style="position: relative; overflow: hidden; width: 600px; height: 600px; margin: 0 auto; display: block;"></div>
 
-      <div id="right-panel" style="height: 300px;"></div>
+      
 <% end %>
 
     </div>

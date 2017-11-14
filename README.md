@@ -3,7 +3,7 @@
 # Blitz
 ## A bike valet solution by Don Chiamthamachinda, Lisa Mae, and John Murphy
 
-##What it does
+## What it does
 Our app aims to probvide a solution for bike riders who may want to ride their bike on only one leg of their trip. Have a client dinner tonight, but want to ride your bike to work? Let Blitz pick it up from your office and return it to your home. Stayed late at the holiday party and don't want to leave your bike behind when you take a cab home? Let Blitz take care of it. Rode your bike to work and it started raining? Take the subway and let Blitz get your bike home safe (and dry!). 
 
 

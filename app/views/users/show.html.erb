@@ -28,13 +28,9 @@
 
 <p>
   <strong>Phone num:</strong>
-  <%= @user.phone_num %>
+  <%= number_to_phone(@user.phone_num, area_code: true) %>
 </p>
 
-<p>
-  <strong>User type:</strong>
-  <%= @user.user_type %>
-</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

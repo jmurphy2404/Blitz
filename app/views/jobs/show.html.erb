@@ -63,8 +63,8 @@
       </p>
 
       <p>
-        <strong>Valet:</strong>
-        Valet #<%= @job.valet_id %>
+        <strong>Valet Number:</strong>
+        <%= @job.valet_id %>
       </p>
 
       <p>
@@ -72,16 +72,16 @@
         <%= @job.status %>
       </p>
       <div id="scroll-area">
-      <div id="right-panel" style="height: 200px;"></div>
+        <div id="right-panel" style="height: 200px;"></div>
       </div>
-      </div>
+      <br>
       <% case current_user.user_type %>
         <% when 'client' %>
           <%= link_to 'Edit', edit_job_path(@job) %> |
           <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %> | 
       <% end %>
       <%= link_to 'Back', jobs_path %>
-
+    </div>
     <br>
     <div class="col-md-6" >
 

@@ -29,7 +29,12 @@
   <br>
   <div class="field">
     <%= form.label :image %>
-
   </div>
+
+  <div>
+  <%= file.field.tag :image, id: :bike_image %>
+  </div>
+
+  <%= form.submit id: :submit_post %>
 
 <% end %>

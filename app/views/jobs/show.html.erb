@@ -1,4 +1,15 @@
 <p id="notice"><%= notice %></p>
+<header class="masthead">
+<div class="intro-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+          <h1 class="brand-heading">Trip Details</h1>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
 <div id="map_coords">
 <p>
   <strong>Origin lat:</strong>
@@ -60,14 +71,14 @@
 <% case current_user.user_type %>
   <% when 'client' %>
     <%= link_to 'Edit', edit_job_path(@job) %> |
-    <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+    <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' } %> |
     <%= link_to 'Back', jobs_path %>
 <% end %>
 <br>
 
 <script>
  var dest_lat = <%= @job.dest_lat %>
- var dest_lng = <%= @job.dest_lng %> 
+ var dest_lng = <%= @job.dest_lng %>
  var origin_lat = <%= @job.origin_lat %>
  var origin_lng = <%= @job.origin_lng %>
 </script>
@@ -78,9 +89,3 @@
     <% when 'valet' %>
       <div id="map" style="position: relative; overflow: hidden; width: 600px; margin: 0 auto; display: block;"></div>
 <% end %>
-
-
-
-
-
-

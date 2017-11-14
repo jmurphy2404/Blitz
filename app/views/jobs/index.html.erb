@@ -39,7 +39,7 @@
         <td><%= job.destination %></td>
         <td><%= job.date.strftime("%B %d, %Y") unless job.date.nil? %></td>
         <td><%= job.time.strftime("%I:%M:%S %p") %></td>
-        <td><%= job.valet_id %></td>
+        <td>Valet #<%= job.valet_id %></td>
         <td><%= job.status %></td>
         <td><%= job.user.email %></td>
         <td><%= link_to 'Details', job %></td>
@@ -99,7 +99,7 @@
           <% end %>
         <% end %>
         <% when 'client' %>
-          <td><%= job.valet_id %></td>
+          <td>Valet #<%= job.valet_id %></td>
         <% end %>
         <td><%= job.status %></td>
         <td><%= job.user.email %></td>

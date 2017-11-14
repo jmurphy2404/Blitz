@@ -42,5 +42,7 @@
 
 <br>
 
-<%= link_to 'Add a new bike', new_bike_path %> |
-<%= link_to "Create a new request", new_job_path %>
+
+
+<%= button_to 'Add Bike', new_bike_path, :method => :get, :class => 'newJobButton' %>
+<%= button_to 'New Request', new_job_path, :method => :get, :class => 'newJobButton' %>

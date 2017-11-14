@@ -42,7 +42,7 @@
         <td><%= job.valet_id %></td>
         <td><%= job.status %></td>
         <td><%= job.user.email %></td>
-        <td><%= link_to 'Details', job %></td>
+        <td><button id= "Details"><%= link_to 'Details', job %></td>
         <td><button id="InTransit"><%= link_to 'In Transit', notify_user_path(:id => job.id, :subject => 'Your bicycle is on its way!'), method: :put, data: { confirm: 'Are you sure you want to email customer?' } %></button></td>
         <td><button id= "Delivered"><%= link_to 'Delivered', notify_user_path(:id => job.id, :subject => 'Your bicycle has been delivered'), method: :put, data:  { confirm: 'Are you sure you want to email customer?' } %></button></td>
 

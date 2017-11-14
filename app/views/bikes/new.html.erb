@@ -1,5 +1,16 @@
-<h1>New Bike</h1>
+<header class="masthead">
+<div class="intro-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+          <h1 class="brand-heading">Create New Bike</h1>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
 
 <%= render 'form', bike: @bike %>
-
-<%= link_to 'Back', bikes_path %>
+<%= file_field_tag :image, id: :bike_image %>
+<%= button_to 'CREATE', bikes_path, :method => :get, :class => 'newJobButton' %>

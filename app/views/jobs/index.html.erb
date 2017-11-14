@@ -91,11 +91,13 @@
         <% case current_user.user_type %>
         <% when 'valet' %>
           <% if job.valet_id != nil %>
-            <td>Already assigned</td>
+            <td style="color:red;">Already assigned</td>
+          <% elsif job.valet_id = current_user.id %>
+            <td style="color:blue;">Assigned to you</td>
           <% else %>
             <%= form_with(model: job, local: true) do |form| %>
             <%= form.hidden_field :valet_id, id: :job_valet_id, :value => current_user.id %>
-            <td><%= submit_tag 'Work' %></td>
+            <td><%= submit_tag 'Work', :class => "btn btn-success btn-xs" %></td>
           <% end %>
         <% end %>
         <% when 'client' %>

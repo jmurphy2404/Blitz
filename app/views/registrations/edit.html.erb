@@ -17,7 +17,7 @@
 
 
 <div class="section_heading">
-<h1 class= "section-heading" style="color:black;font-size:300%">Edit Details</h1>
+<h1 class= "section-heading" style="color:black;font-size:300%">Access Details</h1>
 
 <div class="section_heading">
 <table id="profile_style">
@@ -67,6 +67,6 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<p><%= link_to "Click here", edit_user_path(current_user) %> to view or change your account information</p>
+<p><%= link_to "Click here", user_path(current_user) %> to <%= link_to "view", user_path(current_user) %> or <%= link_to "change", edit_user_path(current_user) %> your account profile</p>
 
 <%= link_to "Back", :back %>
